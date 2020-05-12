@@ -287,38 +287,60 @@ public class Exercises {
         34. 5 boats are in the lake. Each boat has 3 people. How many people are
         on boats in the lake?
         */
-
+		int numberOfBoatsInLake = 5;
+		int numberOfPeopleOnEachBoat = 3;
+		int totalNumberOfPeopleOnBoatsInLake = numberOfBoatsInLake * numberOfPeopleOnEachBoat;
+		
         /*
         35. Ellen had 380 legos, but she lost 57 of them. How many legos does she
         have now?
         */
-
+		int originalAmountOfLegos = 380;
+		int amountOfLegosLost = 57;
+		int remainingAmountOfLegos = originalAmountOfLegos - amountOfLegosLost;
+		
         /*
         36. Arthur baked 35 muffins. How many more muffins does Arthur have to
         bake to have 83 muffins?
         */
-
+		int currentAmountOfMuffinsBaked = 35;
+		int desiredAmountOfMuffinsBaked = 83;
+		int additionalAmountOfMuffinsToBake = desiredAmountOfMuffinsBaked - currentAmountOfMuffinsBaked;
+		
         /*
         37. Willy has 1400 crayons. Lucy has 290 crayons. How many more
         crayons does Willy have then Lucy?
         */
-
+		int amountOfCrayonsWillyHas = 1400;
+		int amountOfCrayonsLucyHas = 290;
+		int differenceInAmountOfCrayons = amountOfCrayonsWillyHas - amountOfCrayonsLucyHas;
+		
         /*
         38. There are 10 stickers on a page. If you have 22 pages of stickers, how
         many stickers do you have?
         */
-
+		int numberOfStickersPerPage = 10;
+		int numberOfPages = 22;
+		int totalNumberOfStickers = numberOfStickersPerPage * numberOfPages;
+		
         /*
         39. There are 96 cupcakes for 8 children to share. How much will each
         person get if they share the cupcakes equally?
         */
-
+		int numberOfCupcakes = 96;
+		int numberOfChildren = 8;
+		int numberOfCupcakesPerChild = numberOfCupcakes / numberOfChildren;
+		
         /*
         40. She made 47 gingerbread cookies which she will distribute equally in
         tiny glass jars. If each jar is to contain six cookies each, how many
         cookies will not be placed in a jar?
         */
-
+		int totalNumberOfGingerbreadCookies = 47;
+		int numberOfGingerbreadCookiesPerJar = 6;
+		int numberOfGingerbreadCookiesNotInJar = 47 % 6;
+		System.out.println(numberOfGingerbreadCookiesNotInJar);
+		
         /*
         41. She also prepared 59 croissants which she plans to give to her 8
         neighbors. If each neighbor received and equal number of croissants,
