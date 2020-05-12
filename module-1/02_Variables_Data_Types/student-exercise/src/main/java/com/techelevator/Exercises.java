@@ -104,34 +104,54 @@ public class Exercises {
         12. Mrs. Hilt bought a yoyo for 24 cents and a whistle for 14 cents. How
         much did she spend in all for the two toys?
         */
-
+		int valueOfYoyoInCents = 24;
+		int valueOfWhistleInCents = 14;
+		int totalMrsHiltSpentInCents = valueOfYoyoInCents + valueOfWhistleInCents;
+		
         /*
         13. Mrs. Hilt made 5 Rice Krispie Treats. She used 8 large marshmallows
         and 10 mini marshmallows.How many marshmallows did she use
         altogether?
         */
-
+		int numberOfLargeMarshmallows = 8;
+		int numberOfMiniMarshmallows = 10;
+		int totalNumberOfMarshmallowsUsed = numberOfLargeMarshmallows + numberOfMiniMarshmallows;
+		
         /*
         14. At Mrs. Hilt's house, there was 29 inches of snow, and Brecknock
         Elementary School received 17 inches of snow. How much more snow
         did Mrs. Hilt's house have?
         */
-
+		int inchesOfSnowMrsHiltHouse = 29;
+		int inchesOfSnowBrecknockElementarySchool = 17;
+		int differenceInInchesOfSnow = inchesOfSnowMrsHiltHouse - inchesOfSnowBrecknockElementarySchool;
+		
         /*
         15. Mrs. Hilt has $10. She spends $3 on a toy truck and $2 on a pencil
         case. How much money does she have left?
         */
-
+		int currentAmountOfMoneyMrsHiltHasInDollars = 10;
+		int costOfToyTruckInDollars = 3;
+		int costOfPencilCaseInDollars = 2;
+		int remainingAmountOfMoneyMrsHiltHasInDollars = currentAmountOfMoneyMrsHiltHasInDollars - (costOfToyTruckInDollars + costOfPencilCaseInDollars);
+		System.out.println(remainingAmountOfMoneyMrsHiltHasInDollars);
+		
         /*
         16. Josh had 16 marbles in his collection. He lost 7 marbles. How many
         marbles does he have now?
         */
-
+		int numberOfMarblesInJoshCollection = 16;
+		int numberOfMarblesLostFromJoshCollection = 7;
+		int remainingNumberOfMarblesInJoshCollection = numberOfMarblesInJoshCollection - numberOfMarblesLostFromJoshCollection;
+		
         /*
         17. Megan has 19 seashells. How many more seashells does she need to
         find to have 25 seashells in her collection?
         */
-
+		int currentNumberOfSeashellsInMeganCollection = 19;
+		int desiredNumberOfSeashellsForMeganCollection = 25;
+		int numberOfSeashellsMeganNeedsToFindForCollection = desiredNumberOfSeashellsForMeganCollection - currentNumberOfSeashellsInMeganCollection; 
+		
         /*
         18. Brad has 17 balloons. 8 balloons are red and the rest are green. How
         many green balloons does Brad have?
