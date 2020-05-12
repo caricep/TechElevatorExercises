@@ -45,23 +45,32 @@ public class Exercises {
         */
 		int numberOfLonelyPigeonsEatingBreadcrumbs = 1;
 		int numberOfNewPigeonsEatingBreadcrumbs = 1;
-		int totalNumberOfPigeonsEatingBreadcrumbs = numberOfLonelyPigeonsEatingBreadcrumbs + numberOfNewPigeonsEatingBreadcrumbs;
+		int currentNumberOfPigeonsEatingBreadcrumbs = numberOfLonelyPigeonsEatingBreadcrumbs + numberOfNewPigeonsEatingBreadcrumbs;
 		
         /*
         6. 3 owls were sitting on the fence. 2 more owls joined them. How many
         owls are on the fence now?
         */
-
+		int originalNumberOfOwlsSittingOnFence = 3;
+		int additionalNumberOfOwlsSittingOnFence = 2;
+		int totalNumberOfOwlsSittingOnFence = originalNumberOfOwlsSittingOnFence + additionalNumberOfOwlsSittingOnFence;
+		
         /*
         7. 2 beavers were working on their home. 1 went for a swim. How many
         beavers are still working on their home?
         */
-
+		int numberOfBeaversBeingHandyWorkingOnTheirHome = 2;
+		int numberOfBeaversThatWouldRatherSwim = 1;
+		int numberOfBeaversRemainingToWorkOnTheirHome = numberOfBeaversBeingHandyWorkingOnTheirHome - numberOfBeaversThatWouldRatherSwim;
+		
         /*
         8. 2 toucans are sitting on a tree limb. 1 more toucan joins them. How
         many toucans in all?
         */
-
+		int numberOfToucansSittingOnTreeLimb = 2;
+		int numberOfToucansJoiningSittingOnTreeLimb = 1;
+		int totalNumberOfToucansSittingOnTreeLimb = numberOfToucansSittingOnTreeLimb + numberOfToucansJoiningSittingOnTreeLimb;
+		
         /*
         9. There are 4 squirrels in a tree with 2 nuts. How many more squirrels
         are there than nuts?
