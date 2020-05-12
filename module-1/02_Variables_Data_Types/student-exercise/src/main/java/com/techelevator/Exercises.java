@@ -13,7 +13,7 @@ public class Exercises {
 		int initialNumberOfBirds = 4;
 		int birdsThatFlewAway = 1;
 		int remainingNumberOfBirds = initialNumberOfBirds - birdsThatFlewAway;
-
+		
         /*
         2. There are 6 birds and 3 nests. How many more birds are there than
         nests?
@@ -28,16 +28,25 @@ public class Exercises {
         3. 3 raccoons are playing in the woods. 2 go home to eat dinner. How
         many raccoons are left in the woods?
         */
-
+		int numberOfRaccoonsPlayingInWoods = 3;
+		int numberOfRaccoonsGoingHomeToEatDinner = 2;
+		int numberOfRaccoonsLeftInWoods = numberOfRaccoonsPlayingInWoods - numberOfRaccoonsGoingHomeToEatDinner;
+		
         /*
         4. There are 5 flowers and 3 bees. How many less bees than flowers?
         */
-
+		int numberOfFlowers = 5;
+		int numberOfBees = 3;
+		int numberOfBeesLessThanFlowers = numberOfFlowers - numberOfBees;
+		
         /*
         5. 1 lonely pigeon was eating breadcrumbs. Another pigeon came to eat
         breadcrumbs, too. How many pigeons are eating breadcrumbs now?
         */
-
+		int numberOfLonelyPigeonsEatingBreadcrumbs = 1;
+		int numberOfNewPigeonsEatingBreadcrumbs = 1;
+		int totalNumberOfPigeonsEatingBreadcrumbs = numberOfLonelyPigeonsEatingBreadcrumbs + numberOfNewPigeonsEatingBreadcrumbs;
+		
         /*
         6. 3 owls were sitting on the fence. 2 more owls joined them. How many
         owls are on the fence now?
