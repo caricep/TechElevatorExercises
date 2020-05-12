@@ -67,9 +67,9 @@ public class Exercises {
         8. 2 toucans are sitting on a tree limb. 1 more toucan joins them. How
         many toucans in all?
         */
-		int numberOfToucansSittingOnTreeLimb = 2;
-		int numberOfToucansJoiningTreeLimbParty = 1;
-		int totalNumberOfToucansSittingOnTreeLimb = numberOfToucansSittingOnTreeLimb + numberOfToucansJoiningTreeLimbParty;
+		int numberOfToucansSittingOnDeciduousTreeLimb = 2;
+		int numberOfToucansJoiningDeciduousTreeLimbParty = 1;
+		int totalNumberOfToucansSittingOnDeciduousTreeLimb = numberOfToucansSittingOnDeciduousTreeLimb + numberOfToucansJoiningDeciduousTreeLimbParty;
 		
         /*
         9. There are 4 squirrels in a tree with 2 nuts. How many more squirrels
@@ -229,18 +229,28 @@ public class Exercises {
         27. Mrs. Hilt has 50 cents. A pencil costs 7 cents. How many pencils can
         she buy with the money she has?
         */
-
+		int amountOfMoneyMrsHiltHasInCents = 50;
+		int costOfOnePencilInCents = 7;
+		int numberOfPencilsMrsHiltCanBuyInCents = amountOfMoneyMrsHiltHasInCents / costOfOnePencilInCents;
+		System.out.println(numberOfPencilsMrsHiltCanBuyInCents);
+		
         /*
         28. Mrs. Hilt saw 33 butterflies. Some of the butterflies were red and others
         were orange. If 20 of the butterflies were orange, how many of them
         were red?
         */
-
+		int totalNumberOfButterfliesSeen = 33;
+		int numberOfOrangeButterfliesSeen = 20;
+		int numberOfRedButterfliesSeen = totalNumberOfButterfliesSeen - numberOfOrangeButterfliesSeen;
+		
         /*
         29. Kate gave the clerk $1.00. Her candy cost 54 cents. How much change
         should Kate get back?
         */
-
+		int amountKatePaidInCents = 100;
+		int costOfCandyInCents = 54;
+		int amountOfChangeKateWillReceive = amountKatePaidInCents - costOfCandyInCents;
+		
         /*
         30. Mark has 13 trees in his backyard. If he plants 12 more, how many trees
         will he have?
