@@ -156,48 +156,75 @@ public class Exercises {
         18. Brad has 17 balloons. 8 balloons are red and the rest are green. How
         many green balloons does Brad have?
         */
-
+		int totalNumberOfBalloons = 17;
+		int numberOfRedBalloons = 8;
+		int numberOfGreenBalloons = totalNumberOfBalloons - numberOfRedBalloons;
+		
         /*
         19. There are 38 books on the shelf. Marta put 10 more books on the shelf.
         How many books are on the shelf now?
         */
-
+		int numberOfBooksOnShelf = 38;
+		int numberOfBooksAddedToShelf = 10;
+		int newNumberOfBooksOnShelf = numberOfBooksOnShelf + numberOfBooksAddedToShelf;
+		
         /*
         20. A bee has 6 legs. How many legs do 8 bees have?
         */
-
+		int amountOfLegsOnOneBee = 6;
+		int amountOfBees = 8;
+		int totalNumberOfLegsOnBees = amountOfLegsOnOneBee * amountOfBees;
+		
         /*
         21. Mrs. Hilt bought an ice cream cone for 99 cents. How much would 2 ice
         cream cones cost?
         */
-
+		int costOfOneIceCreamConeInCents = 99;
+		int numberOfIceCreamCones = 2;
+		int totalCostOfIceCreamConesInCents = costOfOneIceCreamConeInCents * numberOfIceCreamCones;
+		
         /*
         22. Mrs. Hilt wants to make a border around her garden. She needs 125
         rocks to complete the border. She has 64 rocks. How many more rocks
         does she need to complete the border?
         */
-
+		int totalNumberOfRocksNeededToMakeGardenBorder = 125;
+		int currentNumberOfRocks = 64;
+		int numberOfRocksNeededToCompleteGardenBorder = totalNumberOfRocksNeededToMakeGardenBorder - currentNumberOfRocks;
+		
         /*
         23. Mrs. Hilt had 38 marbles. She lost 15 of them. How many marbles does
         she have left?
         */
-
+		int originalNumberOfMarbles = 38;
+		int numberOfLostMarbles = 15;
+		int remainingNumberOfMarbles = originalNumberOfMarbles - numberOfLostMarbles;
+		
         /*
         24. Mrs. Hilt and her sister drove to a concert 78 miles away. They drove 32
         miles and then stopped for gas. How many miles did they have left to drive?
         */
-
+		int totalDistanceToConcertInMiles = 78;
+		int distanceAlreadyDrivenToConcertInMiles = 32;
+		int remainingDistanceToDriveToConcertInMiles = totalDistanceToConcertInMiles - distanceAlreadyDrivenToConcertInMiles;
+		
         /*
         25. Mrs. Hilt spent 1 hour and 30 minutes shoveling snow on Saturday
         morning and 45 minutes shoveling snow on Saturday afternoon. How
         much total time did she spend shoveling snow?
         */
-
+		int timeSpentShovelingSnowSaturdayMorningInMinutes = 90;
+		int timeSpentShovelingSnowSaturdayAfternoonInMinutes = 45;
+		int totalTimeSpentShovelingSnow = timeSpentShovelingSnowSaturdayMorningInMinutes + timeSpentShovelingSnowSaturdayAfternoonInMinutes;
+		
         /*
         26. Mrs. Hilt bought 6 hot dogs. Each hot dog cost 50 cents. How much
         money did she pay for all of the hot dogs?
         */
-
+		int numberOfHotdogsBought = 6;
+		int costOfOneHotdogInCents = 50;
+		int amountPaidForHotdogsInCents = numberOfHotdogsBought * costOfOneHotdogInCents;
+		
         /*
         27. Mrs. Hilt has 50 cents. A pencil costs 7 cents. How many pencils can
         she buy with the money she has?
