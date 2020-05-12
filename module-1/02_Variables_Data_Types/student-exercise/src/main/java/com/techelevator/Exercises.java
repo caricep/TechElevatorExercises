@@ -400,25 +400,40 @@ public class Exercises {
         them in an album. If an album can contain 20 pictures, how many
         albums will she need if there are 480 pictures?
         */
-
+		int totalNumberOfPictures = 480;
+		int numberOfPicturesHeldPerAlbum = 20;
+		int numberOfAlbumsNeeded = totalNumberOfPictures / numberOfPicturesHeldPerAlbum;
+		
         /*
         48. Joe, Susie’s brother, collected all 94 trading cards scattered in his
         room and placed them in boxes. If a full box can hold a maximum of 8
         cards, how many boxes were filled and how many cards are there in
         the unfilled box?
         */
-
+		int numberOfTradingCardsInCollection = 94;
+		int numberOfTradingCardsFullBoxCanHold = 8;
+		int numberOfBoxesFilledWithTradingCards = numberOfTradingCardsInCollection / numberOfTradingCardsFullBoxCanHold;
+		int numberOfTradingCardsInUnfilledBox = numberOfTradingCardsInCollection % numberOfTradingCardsFullBoxCanHold;
+		System.out.println(numberOfBoxesFilledWithTradingCards);
+		System.out.println(numberOfTradingCardsInUnfilledBox);
+		
         /*
         49. Susie’s father repaired the bookshelves in the reading room. If he has
         210 books to be distributed equally on the 10 shelves he repaired,
         how many books will each shelf contain?
         */
-
+		int numberOfBooksToDistribute = 210;
+		int numberOfShelvesForBooks = 10;
+		int numberOfBooksOnEachShelf = numberOfBooksToDistribute / numberOfShelvesForBooks;
+		
         /*
         50. Cristina baked 17 croissants. If she planned to serve this equally to
         her seven guests, how many will each have?
         */
-
+		int totalAmountOfCroissantsBaked = 17;
+		int numberOfGuests = 7;
+		int amountOfCroissantsPerGuest = totalAmountOfCroissantsBaked / numberOfGuests;
+		
         /*
             CHALLENGE PROBLEMS
         */
