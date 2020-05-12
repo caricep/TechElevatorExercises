@@ -95,7 +95,11 @@ public class Exercises {
         Mrs. Flannery's class bakes 17 muffins. How many muffins does first
         grade bake in all?
         */
-
+		int numberOfMuffinsBakedByMrsBrierClass = 18;
+		int numberOfMuffinsBakedByMrsMacAdamsClass = 20;
+		int numberOfMuffinsBakedByMrsFlanneryClass = 17;
+		int totalNumberOfMuffinsBakedByFirstGrade = numberOfMuffinsBakedByMrsBrierClass + numberOfMuffinsBakedByMrsMacAdamsClass + numberOfMuffinsBakedByMrsFlanneryClass;
+		
         /*
         12. Mrs. Hilt bought a yoyo for 24 cents and a whistle for 14 cents. How
         much did she spend in all for the two toys?
