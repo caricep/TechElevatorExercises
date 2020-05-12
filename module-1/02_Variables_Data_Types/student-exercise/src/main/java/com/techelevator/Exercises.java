@@ -255,22 +255,34 @@ public class Exercises {
         30. Mark has 13 trees in his backyard. If he plants 12 more, how many trees
         will he have?
         */
-
+		int numberOfTreesCurrentlyInBackyard = 13;
+		int numberOfTreesToPlantInBackyard = 12;
+		int totalNumberOfTreesInBackyardAfterPlanting = numberOfTreesCurrentlyInBackyard + numberOfTreesToPlantInBackyard;
+		
         /*
         31. Joy will see her grandma in two days. How many hours until she sees
         her?
         */
-
+		int numberOfDaysUntilJoySeesHerGrandma = 2;
+		int numberOfHoursInOneDay = 24;
+		int numberOfHoursUntilJoySeesHerGrandma = numberOfDaysUntilJoySeesHerGrandma * numberOfHoursInOneDay;
+		
         /*
         32. Kim has 4 cousins. She wants to give each one 5 pieces of gum. How
         much gum will she need?
         */
-
+		int numberOfCousins = 4;
+		int piecesOfGumPerCousin = 5;
+		int totalPiecesOfGumNeeded = numberOfCousins * piecesOfGumPerCousin;
+		
         /*
         33. Dan has $3.00. He bought a candy bar for $1.00. How much money is
         left?
         */
-
+		int amountOfMoneyDanHasInCents = 300;
+		int costOfCandyBarInCents = 100;
+		int remainingAmountOfMoneyDanHasInCents = amountOfMoneyDanHasInCents - costOfCandyBarInCents;
+		
         /*
         34. 5 boats are in the lake. Each boat has 3 people. How many people are
         on boats in the lake?
