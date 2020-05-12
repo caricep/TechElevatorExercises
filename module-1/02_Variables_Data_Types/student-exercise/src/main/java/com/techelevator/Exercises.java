@@ -37,7 +37,7 @@ public class Exercises {
         */
 		int numberOfFlowers = 5;
 		int numberOfBees = 3;
-		int numberOfBeesLessThanFlowers = numberOfFlowers - numberOfBees;
+		int differenceOfFlowersAndBees = numberOfFlowers - numberOfBees;
 		
         /*
         5. 1 lonely pigeon was eating breadcrumbs. Another pigeon came to eat
@@ -60,27 +60,35 @@ public class Exercises {
         beavers are still working on their home?
         */
 		int numberOfBeaversBeingHandyWorkingOnTheirHome = 2;
-		int numberOfBeaversThatWouldRatherSwim = 1;
-		int numberOfBeaversRemainingToWorkOnTheirHome = numberOfBeaversBeingHandyWorkingOnTheirHome - numberOfBeaversThatWouldRatherSwim;
+		int numberOfBeaversThatLeftWorkingOnHomeToSwim = 1;
+		int remainingNumberOfBeaversWorkingOnTheirHome = numberOfBeaversBeingHandyWorkingOnTheirHome - numberOfBeaversThatLeftWorkingOnHomeToSwim;
 		
         /*
         8. 2 toucans are sitting on a tree limb. 1 more toucan joins them. How
         many toucans in all?
         */
 		int numberOfToucansSittingOnTreeLimb = 2;
-		int numberOfToucansJoiningSittingOnTreeLimb = 1;
-		int totalNumberOfToucansSittingOnTreeLimb = numberOfToucansSittingOnTreeLimb + numberOfToucansJoiningSittingOnTreeLimb;
+		int numberOfToucansJoiningTreeLimbParty = 1;
+		int totalNumberOfToucansSittingOnTreeLimb = numberOfToucansSittingOnTreeLimb + numberOfToucansJoiningTreeLimbParty;
 		
         /*
         9. There are 4 squirrels in a tree with 2 nuts. How many more squirrels
         are there than nuts?
         */
-
+		int numberOfSquirrelsInTree = 4;
+		int numberOfNuts = 2;
+		int numberOfExtraSquirrels = numberOfSquirrelsInTree - numberOfNuts;
+		
         /*
         10. Mrs. Hilt found a quarter, 1 dime, and 2 nickels. How much money did
         she find?
         */
-
+		int valueOfQuartersInCents = 25;
+		int valueOfDimesInCents = 10;
+		int valueOfNickelsInCents = 5;
+		int totalMoneyMrsHiltFoundInCents = valueOfQuartersInCents + valueOfDimesInCents + valueOfNickelsInCents * 2;
+		System.out.println(totalMoneyMrsHiltFoundInCents);
+		
         /*
         11. Mrs. Hilt's favorite first grade classes are baking muffins. Mrs. Brier's
         class bakes 18 muffins, Mrs. MacAdams's class bakes 20 muffins, and
