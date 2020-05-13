@@ -152,7 +152,7 @@ public class Lecture {
     15. Now, do it again with a different boolean opeation.
     */
     public String returnAdultOrMinorAgain(int number) {
-        if (number > 17) {  /// Can use the opposite, with !(number > 18 as well
+        if (number > 17) {  /// Can use the opposite, with (!number > 18) as well
             return "Adult";
         } else {
             return "Minor";

@@ -107,9 +107,11 @@ public class Exercises {
 	 posNeg(-4, -5, true) → true
 	 */
 	public boolean posNeg(int a, int b, boolean negative) {
-		if ((a < 0) ^ (b < 0)) {
+		if ((a < 0) && (b > 0) ^ (a > 0 && b < 0)) {
 			return true;
-		} else if ()
+		} else if ((a < 0) && (b < 0)) {
+			return true;
+		}
 		
 		return false;
 	}
@@ -122,6 +124,7 @@ public class Exercises {
 	 or35(8) → false
 	 */
 	public boolean or35(int n) {
+		
 		return false;
 	}
 
@@ -132,6 +135,12 @@ public class Exercises {
 	 icyHot(2, 120) → false
 	 */
 	public boolean icyHot(int temp1, int temp2) {
+		if ((temp1 < 0) && (temp2 > 100)) {
+			return true;
+		} else if ((temp2 < 0) && (temp1 > 100)) {
+			return true;
+		}
+		
 		return false;
 	}
 
@@ -142,6 +151,7 @@ public class Exercises {
 	 in1020(8, 99) → false
 	 */
 	public boolean in1020(int a, int b) {
+		
 		return false;
 	}
 
@@ -153,6 +163,14 @@ public class Exercises {
 	 hasTeen(20, 10, 13) → true
 	 */
 	public boolean hasTeen(int a, int b, int c) {
+		if ((a >= 13) && (a <= 19)) {
+			return true;
+		} else if ((b >= 13) && (b <= 19)) {
+			return true;
+		} else if ((c >= 13) && (c <= 19)) {
+			return true;
+		}
+		
 		return false;
 	}
 
