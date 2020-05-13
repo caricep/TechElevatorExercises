@@ -10,9 +10,17 @@ public class Exercises {
 	 sleepIn(false, true) → true
 	 */
 	public boolean sleepIn(boolean weekday, boolean vacation) {
+		
+		if (vacation == true) { 
+			return true;
+		} else if (!weekday) {
+			return true;
+		}
+		
 		return false;
 	}
-
+	///Can also just use: return vacation || !weekday; in place of the if/else if statement.
+	
 	/*
 	 2. We have two monkeys, a and b, and the parameters aSmile and bSmile indicate if each is smiling.
 	 We are in trouble if they are both smiling or if neither of them is smiling. Return true if we
@@ -22,6 +30,12 @@ public class Exercises {
 	 monkeyTrouble(true, false) → false
 	 */
 	public boolean monkeyTrouble(boolean aSmile, boolean bSmile) {
+		if (aSmile && bSmile) {
+			return true;
+		} else if (!aSmile && !bSmile) {
+			return true;
+		}
+		
 		return false;
 	}
 
@@ -32,6 +46,12 @@ public class Exercises {
 	 sumDouble(2, 2) → 8
 	 */
 	public int sumDouble(int a, int b) {
+		if (a != b) {
+			return a + b;
+		} else if (a == b) {
+			return (a + b) * 2;
+		}
+		
 		return 0;
 	}
 
@@ -216,7 +236,27 @@ public class Exercises {
 	 caughtSpeeding(65, true) → 0
 	 */
 	public int caughtSpeeding(int speed, boolean isBirthday) {
-		return 0;
+		int ticketSize = 0;
+		
+		/// Speed can be 5 higher on birthday
+		if (isBirthday) {
+			speed -= 5;
+		}
+		
+		/// If speed is 60 or less, the result is 0
+		
+		/// If speed is between 61 and 80 inclusive, the result is 1
+		
+		/// If speed is 81 or more, the result is 2
+		if ( speed <=60 ) {
+			ticketSize = 0;
+		} else if ( speed >= 61 && speed <=80) {
+			ticketSize = 1;
+		} else if ( speed >= 81) {
+			ticketSize = 2;
+		}
+		
+		return ticketSize;
 	}
 
 	/*
