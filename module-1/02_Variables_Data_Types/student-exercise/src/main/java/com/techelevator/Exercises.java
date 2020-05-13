@@ -249,7 +249,7 @@ public class Exercises {
         */
 		int amountKatePaidInCents = 100;
 		int costOfCandyInCents = 54;
-		int amountOfChangeKateWillReceive = amountKatePaidInCents - costOfCandyInCents;
+		int amountOfChangeKateWillReceiveInCents = amountKatePaidInCents - costOfCandyInCents;
 		
         /*
         30. Mark has 13 trees in his backyard. If he plants 12 more, how many trees

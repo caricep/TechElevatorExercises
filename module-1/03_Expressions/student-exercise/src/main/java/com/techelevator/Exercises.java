@@ -65,6 +65,7 @@ public class Exercises {
 	 diff21(-10) → 31
 	 */
 	public int diff21(int n) {
+
 		return 0;
 	}
 
@@ -77,6 +78,10 @@ public class Exercises {
 	 parrotTrouble(false, 6) → false
 	 */
 	public boolean parrotTrouble(boolean talking, int hour) {
+		if (talking && (hour < 7 || hour > 20)) {
+			return true;
+		}
+		
 		return false;
 	}
 
@@ -87,6 +92,10 @@ public class Exercises {
 	 makes10(1, 9) → true
 	 */
 	public boolean makes10(int a, int b) {
+		if ((a == 10 || b == 10) ^ (a + b == 10)) {
+			return true;
+		}
+		
 		return false;
 	}
 
@@ -98,6 +107,10 @@ public class Exercises {
 	 posNeg(-4, -5, true) → true
 	 */
 	public boolean posNeg(int a, int b, boolean negative) {
+		if ((a < 0) ^ (b < 0)) {
+			return true;
+		} else if ()
+		
 		return false;
 	}
 
