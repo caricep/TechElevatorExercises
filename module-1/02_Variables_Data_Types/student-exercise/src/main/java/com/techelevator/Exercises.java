@@ -444,8 +444,14 @@ public class Exercises {
         Hint: Calculate the hourly rate for each painter, combine them, and then divide the total walls in feet by the combined hourly rate of the painters.
         Challenge: How many days will it take the pair to paint 623 rooms assuming they work 8 hours a day?.
         */
-		
-		
+		double roomSizeInSquareFeet = 168;
+		double oneHourPaintRateBill = roomSizeInSquareFeet / 2.15;
+		double oneHourPaintRateJill = roomSizeInSquareFeet / 1.90;
+		double oneHourPaintRateTogether = oneHourPaintRateBill + oneHourPaintRateJill;
+		double numberOfRoomsToPaint = 5;
+		double totalNumberOfHoursToPaintRoomTogether = (roomSizeInSquareFeet * numberOfRoomsToPaint) / oneHourPaintRateTogether;
+		System.out.println(totalNumberOfHoursToPaintRoomTogether);
+				
         /*
         Create and assign variables to hold your first name, last name, and middle initial. Using concatenation,
         build an additional variable to hold your full name in the order of last name, first name, middle initial. The
