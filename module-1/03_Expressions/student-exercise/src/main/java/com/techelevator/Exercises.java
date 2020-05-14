@@ -444,6 +444,7 @@ public class Exercises {
 		if (n > 0 && (n % 3 == 0 ^ n % 5 == 0)) {
 			return true;
 		}
+		
 		return false;
 	}
 
@@ -456,6 +457,9 @@ public class Exercises {
 	 less20(20) → false
 	 */
 	public boolean less20(int n) {
+		if (n > 0) {
+			return true;
+		}
 		return false;
 	}
 
@@ -467,6 +471,11 @@ public class Exercises {
 	 nearTen(19) → true
 	 */
 	public boolean nearTen(int num) {
+		if (num > 0 && (num % 10 == 0 + 1 || num % 10 == 0 + 2)) {
+			return true;
+		} else if (num > 0 && (num % 10 == 0 + 2 || num % 10 == 0 - 2)) {
+			return true;
+		}
 		return false;
 	}
 
@@ -478,7 +487,11 @@ public class Exercises {
 	 teenSum(13, 2) → 19
 	 */
 	public int teenSum(int a, int b) {
-		return 0;
+		if (a >= 13 && a <= 19 || b >= 13 && b <= 19) {
+			return 19;
+		}
+		
+		return a + b;
 	}
 
 	/*
@@ -489,7 +502,15 @@ public class Exercises {
 	 answerCell(true, false, false) → false
 	 */
 	public boolean answerCell(boolean isMorning, boolean isMom, boolean isAsleep) {
-		return false;
+		if (isAsleep) {
+			return false;
+		} else if (isMorning && isMom && !isAsleep) {
+			return true;
+		} else if (isMorning && !isMom) {
+			return false;
+		}
+		
+		return true;
 	}
 
 	/*
