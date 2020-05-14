@@ -411,7 +411,7 @@ public class Exercises {
 	 specialEleven(24) → false
 	 */
 	public boolean specialEleven(int n) {
-		if (n > 0 && ((n % 11 == 0) || (n % 11 == 0 + 1))) {
+		if (n > 0 && (n % 11 == 0 || n % 11 == 0 + 1)) {
 			return true;
 		}
 		
@@ -426,6 +426,10 @@ public class Exercises {
 	 more20(22) → true
 	 */
 	public boolean more20(int n) {
+		if (n > 0 && (n % 20 == 0 + 1 || n % 20 == 0 + 2)) {
+			return true;
+		}
+		
 		return false;
 	}
 
@@ -437,6 +441,9 @@ public class Exercises {
 	 old35(15) → false
 	 */
 	public boolean old35(int n) {
+		if (n > 0 && (n % 3 == 0 ^ n % 5 == 0)) {
+			return true;
+		}
 		return false;
 	}
 
