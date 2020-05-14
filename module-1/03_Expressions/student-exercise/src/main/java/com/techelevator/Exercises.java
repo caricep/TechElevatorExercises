@@ -452,6 +452,7 @@ public class Exercises {
 	 */
 	public boolean less20(int n) {
 		if (n > 0) {
+
 			return true;
 		}
 		return false;
@@ -465,7 +466,7 @@ public class Exercises {
 	 nearTen(19) → true
 	 */
 	public boolean nearTen(int num) {
-		if (num > 0 && (num % 10 == 0 + 1 || num % 10 == 0 + 2)) {
+		if (num > 0 && (num % 10 == 0 + 1 || num % 10 == 0 - 1)) {
 			return true;
 		} else if (num > 0 && (num % 10 == 0 + 2 || num % 10 == 0 - 2)) {
 			return true;
@@ -517,7 +518,7 @@ public class Exercises {
 	 teaParty(20, 6) → 2
 	 */
 	public int teaParty(int tea, int candy) {
-		if (tea >= (candy * 2) || candy >= (tea * 2)) {
+		if ((tea >= 5 && candy >= 5) && tea >= (candy * 2) || (tea >= 5 && candy >= 5) && candy >= (tea * 2)) {
 			return 2;
 		} else if (tea >= 5 && candy >= 5) {
 			return 1;
