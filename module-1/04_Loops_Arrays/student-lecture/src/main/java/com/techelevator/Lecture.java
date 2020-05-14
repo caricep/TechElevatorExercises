@@ -7,7 +7,15 @@ public class Lecture {
     */
     public int[] returnArray() {
         int[] array = { 80, 8080, 443 };
-        return null;
+        
+ ///       Equivalent to:
+ ///		int[] array = new int[3];
+ ///       	array[0] = 80;
+ ///       	array[1] = 8080;
+ ///   		array[2] = 443;
+ 
+        
+        return array;
     }
 
     /*

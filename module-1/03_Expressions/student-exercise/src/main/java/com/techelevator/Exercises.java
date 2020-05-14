@@ -211,15 +211,14 @@ public class Exercises {
 	 intMax(3, 2, 1) → 3
 	 */
 	public int intMax(int a, int b, int c) {
-		if (a > b && a > c) {
+		if (a >= b && a >= c) {
 			return a;
-		} else if (b > a && b > c) {
+		} else if (b >= a && b >= c) {
 			return b;
-		} else if (c > a && c > b) {
-			return c;
-		}
+		} 
 		
-		return 0;
+		return c;
+		
 	}
 
 	/*
@@ -247,11 +246,6 @@ public class Exercises {
 	 max1020(11, 9) → 11
 	 */
 	public int max1020(int a, int b) {
-		if ((a > b) && (a >= 10) && (a <= 20)) {
-			return a;
-		} else if ((b > a) && (b >= 10) && (b <= 20)) {
-			return b;
-		}
 		
 		return 0;
 	}
