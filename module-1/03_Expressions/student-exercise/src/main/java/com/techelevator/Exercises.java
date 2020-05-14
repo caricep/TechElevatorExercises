@@ -393,6 +393,12 @@ public class Exercises {
 	 in1To10(11, true) → true
 	 */
 	public boolean in1To10(int n, boolean outsideMode) {
+		if (!outsideMode && (n >= 1 && n <= 10)) {
+			return true;
+		} else if (outsideMode && (n <= 1 || n >= 10)) {
+			return true;
+		}
+		
 		return false;
 	}
 
