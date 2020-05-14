@@ -523,6 +523,12 @@ public class Exercises {
 	 teaParty(20, 6) → 2
 	 */
 	public int teaParty(int tea, int candy) {
+		if (tea >= (candy * 2) || candy >= (tea * 2)) {
+			return 2;
+		} else if (tea >= 5 && candy >= 5) {
+			return 1;
+		} 
+		
 		return 0;
 	}
 
@@ -533,6 +539,14 @@ public class Exercises {
 	 twoAsOne(3, 2, 2) → false
 	 */
 	public boolean twoAsOne(int a, int b, int c) {
+		if (a + b == c) {
+			return true;
+		} else if (a + c == b) {
+			return true;
+		} else if (b + c == a) {
+			return true;
+		}
+		
 		return false;
 	}
 
@@ -544,6 +558,10 @@ public class Exercises {
 	 inOrder(1, 1, 2, true) → true
 	 */
 	public boolean inOrder(int a, int b, int c, boolean bOk) {
+		if ((b > a && c > b) || bOk && c > b) {
+			return true;
+		}
+		
 		return false;
 	}
 
@@ -556,6 +574,9 @@ public class Exercises {
 	 inOrderEqual(5, 5, 7, true) → true
 	 */
 	public boolean inOrderEqual(int a, int b, int c, boolean equalOk) {
+		if ((a < b && b < c) || equalOk && a <= b && b <= c) {
+			return true;
+		}
 		return false;
 	}
 
@@ -567,6 +588,14 @@ public class Exercises {
 	 loneSum(3, 3, 3) → 0
 	 */
 	public int loneSum(int a, int b, int c) {
+		int sumABC = a + b + c;
+		
+		if (a != b && a != c && b != c) {
+			return sumABC;
+		} else if (a == b || a == c || b == c) {
+			
+		}
+		
 		return 0;
 	}
 
