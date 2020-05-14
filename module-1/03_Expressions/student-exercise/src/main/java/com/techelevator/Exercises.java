@@ -336,7 +336,7 @@ public class Exercises {
 		/// If speed is between 61 and 80 inclusive, the result is 1
 		
 		/// If speed is 81 or more, the result is 2
-		if ( speed <=60 ) {
+		if ( speed <= 60 ) {
 			ticketSize = 0;
 		} else if ( speed >= 61 && speed <=80) {
 			ticketSize = 1;
@@ -355,7 +355,11 @@ public class Exercises {
 	 sortaSum(10, 11) → 21
 	 */
 	public int sortaSum(int a, int b) {
-		return 0;
+		if ((a + b) < 10 || (a + b) > 19) {
+			return a + b;
+		}
+		
+		return 20;
 	}
 
 	/*
@@ -368,6 +372,16 @@ public class Exercises {
 	 alarmClock(0, false) → "10:00"
 	 */
 	public String alarmClock(int day, boolean vacation) {
+		if (vacation && (day > 0 && day < 6)) {
+			return "10:00";
+		} else if (vacation && (day == 0 || day == 6)) {
+			return "off";
+		} else if (!vacation && (day > 0 && day < 6)) {
+			return "7:00";
+		} else if (!vacation && (day == 0 || day == 6)) {
+			return "10:00";
+		}
+		
 		return "";
 	}
 
