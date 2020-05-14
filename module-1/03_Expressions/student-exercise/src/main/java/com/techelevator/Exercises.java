@@ -587,9 +587,15 @@ public class Exercises {
 		
 		if (a != b && a != c && b != c) {
 			return sumABC;
-		} else if (a == b || a == c || b == c) {
-			
-		}
+		} else if (a == b && a == c) {
+			return 0;
+		} else if (a == b) {
+			return c;
+		} else if (a == c) {
+			return b;
+		} else if (b == c) {
+			return a;
+		} 
 		
 		return 0;
 	}
@@ -605,7 +611,19 @@ public class Exercises {
 	 luckySum(13, 13, 3) → 0
 	 */
 	public int luckySum(int a, int b, int c) {
+		int sumABC = a + b + c;
 		
+		if (a != 13 && b != 13 && c != 13) {
+			return sumABC;
+		} else if (a == 13 && b == 13) {
+			return 0;
+		} else if (a == 13) {
+			return c;
+		} else if (b == 13) {
+			return a;
+		} else if (c == 13) {
+			return a + b;
+		}
 		return 0;
 	}
 
