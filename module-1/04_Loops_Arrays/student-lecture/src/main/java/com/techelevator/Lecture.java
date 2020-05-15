@@ -58,7 +58,7 @@ public class Lecture {
 
             int result = number * 5;
 
-        } // the result variable disappears here
+        } // The result variable disappears here
 
         return number; // We want to return result here. How?
     }
