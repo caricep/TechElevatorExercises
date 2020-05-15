@@ -451,8 +451,9 @@ public class Exercises {
 	 less20(20) → false
 	 */
 	public boolean less20(int n) {
-		if (n > 0) {
-
+		if (n > 0 && n % 20 == 0 - 1) {
+			return true;
+		} else if (n > 0 && n % 20 == 0 - 2) {
 			return true;
 		}
 		return false;
