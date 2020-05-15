@@ -13,7 +13,7 @@ public class Exercises {
 		int initialNumberOfBirds = 4;
 		int birdsThatFlewAway = 1;
 		int remainingNumberOfBirds = initialNumberOfBirds - birdsThatFlewAway;
-
+		
         /*
         2. There are 6 birds and 3 nests. How many more birds are there than
         nests?

@@ -10,7 +10,15 @@ public class Exercises {
 	 sleepIn(false, true) → true
 	 */
 	public boolean sleepIn(boolean weekday, boolean vacation) {
+		
+		if (vacation == true) {
+			return true;
+		} else if (!weekday) {
+			return true;
+		}
+		
 		return false;
+		//	return vacation || !weekday;
 	}
 
 	/*
@@ -21,7 +29,7 @@ public class Exercises {
 	 monkeyTrouble(false, false) → true
 	 monkeyTrouble(true, false) → false
 	 */
-	public boolean monkeyTrouble(boolean aSmile, boolean bSmile) {
+	public boolean monkeyTrouble(boolean aSmile, boolean bSmile) {	
 		return false;
 	}
 
@@ -216,7 +224,20 @@ public class Exercises {
 	 caughtSpeeding(65, true) → 0
 	 */
 	public int caughtSpeeding(int speed, boolean isBirthday) {
-		return 0;
+		int ticketSize = 0;
+		
+		// speed can 5 higher on birthday
+		if (isBirthday) {
+			speed -= 5;
+		}
+		
+		if ( speed >= 81) {
+			ticketSize = 2;
+		} else if (speed >= 61) {
+			ticketSize = 1;
+		} 
+	
+		return ticketSize;
 	}
 
 	/*
