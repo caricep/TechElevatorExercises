@@ -246,7 +246,11 @@ public class Exercises {
 	 max1020(11, 9) → 11
 	 */
 	public int max1020(int a, int b) {
-		
+		if ((a <= 10 && a <= 20 && b <= 10 && b <= 20) && a > b) {
+			return a;
+		} else if ((a <= 10 && a <= 20 && b <= 10 && b <= 20) && b > a) {
+			return b;
+		}
 		return 0;
 	}
 
@@ -324,12 +328,6 @@ public class Exercises {
 		if (isBirthday) {
 			speed -= 5;
 		}
-		
-		/// If speed is 60 or less, the result is 0
-		
-		/// If speed is between 61 and 80 inclusive, the result is 1
-		
-		/// If speed is 81 or more, the result is 2
 		if ( speed <= 60 ) {
 			ticketSize = 0;
 		} else if ( speed >= 61 && speed <=80) {
