@@ -115,7 +115,13 @@ public class Exercises {
 	 sum2([1, 1, 1, 1]) → 2
 	 */
 	public int sum2(int[] nums) {
-		return 0;
+		if (nums[nums.length - 1] < 2) {
+			return nums[0] + nums[1];
+		} else if (nums[nums.length - 1] == 0) {
+			return 0;
+		}
+			
+		return nums[0] + nums[1];
 	}
 
 	/*
@@ -126,7 +132,7 @@ public class Exercises {
 	 middleWay([5, 2, 9], [1, 4, 5]) → [2, 4]
 	 */
 	public int[] middleWay(int[] a, int[] b) {
-		return new int[] {};
+		return new int[] {a[1], b[1]};
 	}
 
 	/*
