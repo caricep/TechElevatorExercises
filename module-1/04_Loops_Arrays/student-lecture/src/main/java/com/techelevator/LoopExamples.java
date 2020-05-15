@@ -74,7 +74,7 @@ public class LoopExamples {
 			System.out.println( nums[j]);
 		}
 		
-		// If divisible by 3, skip(go to next number), only printing if not divisible by 3, then continuing
+		// If divisible by 3, skip (go to next number), only printing if not divisible by 3, then continuing
 		for (int i = 0; i < nums.length; i++) {
 			System.out.println( nums[i] );
 			if (nums[i] % 3 == 0) {
