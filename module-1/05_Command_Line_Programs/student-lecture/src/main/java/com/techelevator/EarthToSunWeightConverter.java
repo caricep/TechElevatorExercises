@@ -1,5 +1,7 @@
 package com.techelevator;
 
+import java.util.Scanner;
+
 public class EarthToSunWeightConverter {
 
 	/*
@@ -14,7 +16,19 @@ public class EarthToSunWeightConverter {
 		
 		int sunGravity = 28;
 
-
+		System.out.println("Enter the Earth weight.");
+		
+		Scanner in = new Scanner( System.in );
+		
+		String userInput = in.nextLine();
+			
+		int earthWeight = Integer.parseInt(userInput);
+		
+		int sunWeight = earthWeight * sunGravity;
+		
+		System.out.println(sunWeight);
+		
+		/// For the rest of the example, refer to lecture examples
 	}
 
 }
