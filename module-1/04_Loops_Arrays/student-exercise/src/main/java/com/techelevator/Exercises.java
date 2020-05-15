@@ -143,14 +143,14 @@ public class Exercises {
 	 countEvens([1, 3, 5]) → 0
 	 */
 	public int countEvens(int[] nums) {
-		int evenSum = 0;
+		int evenNumbers = 0;
 		
 		for (int i = 0; i < nums.length; i++) {
 			if (nums[i] % 2 == 0) 
-				evenSum++;
+				evenNumbers++;
 
 		}
-		return evenSum;
+		return evenNumbers;
 	}
 
 	/*
@@ -162,8 +162,19 @@ public class Exercises {
 	 sum13([1, 2, 2, 1, 13]) → 6
 	 */
 	public int sum13(int[] nums) {
-
-		return 0;
+		int arraySum = 0;
+		
+		for (int i = 0; i < nums.length; i++) {
+			if (nums[i] < 13) {
+				arraySum++; 
+			
+			if (nums[i] == 13)
+				i += 2;
+			} 
+		}
+		
+		return arraySum;
+		
 	}
 
 	/*
