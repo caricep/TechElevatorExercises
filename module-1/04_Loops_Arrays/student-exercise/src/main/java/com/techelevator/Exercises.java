@@ -93,7 +93,7 @@ public class Exercises {
 
 	/*
 	 8. Given an array of ints length 3, figure out which is larger between the first and last elements 
-	 in the array, and set all the other elements to be that value. Return the changed array..
+	 in the array, and set all the other elements to be that value. Return the changed array.
 	 maxEnd3([1, 2, 3]) → [3, 3, 3]
 	 maxEnd3([11, 5, 9]) → [11, 11, 11]
 	 maxEnd3([2, 11, 3]) → [3, 3, 3]
@@ -143,7 +143,14 @@ public class Exercises {
 	 countEvens([1, 3, 5]) → 0
 	 */
 	public int countEvens(int[] nums) {
-		return 0;
+		int evenSum = 0;
+		
+		for (int i = 0; i < nums.length; i++) {
+			if (nums[i] % 2 == 0) 
+				evenSum++;
+
+		}
+		return evenSum;
 	}
 
 	/*
@@ -155,6 +162,7 @@ public class Exercises {
 	 sum13([1, 2, 2, 1, 13]) → 6
 	 */
 	public int sum13(int[] nums) {
+
 		return 0;
 	}
 
@@ -184,7 +192,7 @@ public class Exercises {
 	 sum28([2, 3, 2, 2, 4, 2, 2]) → false
 	 sum28([1, 2, 3, 4]) → false
 	 */
-	public boolean sum28(int[] nums) {
+	 public boolean sum28(int[] nums) {	
 		return false;
 	}
 
