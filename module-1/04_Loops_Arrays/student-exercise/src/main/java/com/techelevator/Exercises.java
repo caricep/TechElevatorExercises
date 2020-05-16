@@ -165,8 +165,8 @@ public class Exercises {
 		int arraySum = 0;
 		
 		for (int i = 0; i < nums.length; i++) {
-			if (nums[i] < 13) {
-				arraySum++; 
+			if (nums[i] != 13) {
+				arraySum += nums[i]; 
 			
 			if (nums[i] == 13)
 				i += 2;
