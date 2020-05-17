@@ -13,47 +13,24 @@ public class Fibonacci {
 		String userInput = in.nextLine();
 		int enteredNumber = Integer.parseInt(userInput);
 		
-		int[] fibonacciFirstThree = {0, 1, 1};
+		int zeroNum = 0;
+		int oneNum = 1;
+		
+		for (int i = 1; i > 1; i++) {
+			
 		if (enteredNumber == 0) {
 			System.out.printf("Fibonacci sequence for 0 not found.");
 		} else if (enteredNumber == 1) {
-			System.out.println(fibonacciFirstThree[0] + ", " + fibonacciFirstThree[1]);
-		}
-		
-		int[] allFibonacciNumbers = {};
-		for (i = 2, i > 1, i++) {
-			if 
-		}
-		
-        	
-        	 {
-        		
-        	//	 for (i = 2; i > 1; i++) {
-        	//		 if (fibonacciNumber > 1)	
-        	//		 i++;
-        	//			System.out.print("0, " + "1, " + "1, " + fibonacciNumber);
-        		
-        		
-        			
-        	}
-        		
-	
-	
-	
+			System.out.println(zeroNum + ", " + oneNum);
 			
-        	{
-        			
-        			}
-        	        
-        				
-        					
-        				
-  
-        			
+			
+		}
+		
+			
+		}
+		
         
-        		
-        	
     		
-        	}
+     }
 
 }
