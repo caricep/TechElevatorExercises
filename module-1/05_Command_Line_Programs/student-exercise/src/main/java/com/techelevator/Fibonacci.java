@@ -9,28 +9,25 @@ public class Fibonacci {
 		Scanner in = new Scanner(System.in);
 		
 		System.out.print("Please enter the Fibonacci number: ");
-		
-		String userInput = in.nextLine();
-		int enteredNumber = Integer.parseInt(userInput);
-		
-		int zeroNum = 0;
-		int oneNum = 1;
-		
-		for (int i = 1; i > 1; i++) {
-			
-		if (enteredNumber == 0) {
-			System.out.printf("Fibonacci sequence for 0 not found.");
-		} else if (enteredNumber == 1) {
-			System.out.println(zeroNum + ", " + oneNum);
-			
-			
-		}
-		
-			
-		}
-		
-        
-    		
-     }
 
+		int enteredNumber = in.nextInt();
+		in.nextLine();
+		
+		int firstNumber = 0;
+		int secondNumber = 1;
+		int fibonacciSum = 0;
+		
+		System.out.print(firstNumber + ", ");
+		
+		for ( int nextNumber = 1; nextNumber <= enteredNumber; ) {
+			
+			System.out.print(nextNumber + ", " + "");
+			
+			fibonacciSum = firstNumber;
+			firstNumber = nextNumber;
+			nextNumber = nextNumber + fibonacciSum;
+		}
+				
+		
+	}
 }
