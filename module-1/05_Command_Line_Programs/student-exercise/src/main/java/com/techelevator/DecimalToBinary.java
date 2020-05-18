@@ -3,7 +3,7 @@ package com.techelevator;
 import java.util.Scanner;
 
 /*
- 
+ //
 Please enter in a series of decimal values (separated by spaces): 460 8218 1 31313 987654321
 
 460 in binary is 111001100
