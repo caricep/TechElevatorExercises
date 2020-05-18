@@ -6,9 +6,6 @@ public class LinearConvert {
 
 	public static void main(String[] args) {
 		
-		// Foot to Meter conversion: m = f * 0.3048
-		// Meter to Foot conversion: f = m * 3.2808399
-		
 		System.out.print("Please enter the length: ");
 		
 		Scanner in = new Scanner (System.in);

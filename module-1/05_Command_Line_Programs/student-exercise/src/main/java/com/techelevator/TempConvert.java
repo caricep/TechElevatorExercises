@@ -5,9 +5,6 @@ import java.util.Scanner;
 public class TempConvert {
 
 	public static void main(String[] args) {
-		
-		// Fahrenheit to Celsius conversion:  Tc = (Tf - 32) / 1.8
-		// Celsius to Fahrenheit conversion:  Tf = Tc * 1.8 + 32
 	
 		System.out.print("Please enter the temperature: ");
 		
