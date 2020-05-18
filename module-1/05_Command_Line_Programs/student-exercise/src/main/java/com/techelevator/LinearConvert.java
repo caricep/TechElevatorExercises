@@ -9,7 +9,7 @@ public class LinearConvert {
 		System.out.print("Please enter the length: ");
 		
 		Scanner in = new Scanner (System.in);
-		
+		//.
 		int lengthInput = in.nextInt();
 		in.nextLine();
 		
