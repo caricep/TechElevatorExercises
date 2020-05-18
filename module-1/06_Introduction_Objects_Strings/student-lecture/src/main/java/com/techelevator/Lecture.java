@@ -6,19 +6,47 @@ public class Lecture {
 	public static void main(String[] args) {
 
 		/* Object Instantiation */
-
+		House houseAt443WinstonSt = new House(1800, "443 Winston St", "Cornflower Blue");
+	
+		House houseTwo = new House(200, "Somewhere", "red");
+		//CLASS NOTES: houseAt443WinstonSt and houseTwo are the objects in the examples above
+		
+		houseAt443WinstonSt.setColor("Orange");  //CLASS NOTES: Changes the color from Cornflower Blue to Orange
+		houseTwo.setAddress("123 Street");   //CLASS NOTES: Changes the address for houseTwo
 		
 		/* Value Type */
 		int x = 10;
-
+		
 		
 		/* Reference Type */
+		//EXAMPLE: updating variable in stack updates the object in the heap for all variables 
 		int[] numbers = { 10, 20, 30 , 40 };
+		int[] numbers2 = numbers;
+		numbers2[2] = 500;
+		numbers[0] = 128;
 	
 		
-		
+		//Immutable EXAMPLE
 		String firstName = "joe";
-		firstName.toUpperCase();
+		firstName.toUpperCase();  //without the below line, assigning it to something, this line is lost
+		String firstNameUpperCase = firstName.toUpperCase();  //CLASS NOTES: must assign so that it creates a new object
+
+		//Object Equality EXAMPLES below
+
+		// EXAMPLE 1
+		/*if (firstName == other) {
+			System.out.println("not ==");
+		}
+		
+		if (firstName.equals(other)) {
+			System.out.println(".equals");
+		}
+		
+		// EXAMPLE 2
+		String oneMore = firstName;
+		if (firstName == oneMore) {
+			System.out.println("==");
+		}*/
 
 		
 		System.out.println("************************************");
@@ -51,15 +79,15 @@ public class Lecture {
 		System.out.println(fourth);
 		
 		/* length */
-		int nameLength = 0;
+		int nameLength = name.length();  //CLASS NOTES: changed from 0 to name.length(); -- NEED Parentheses!!
 		System.out.println("The length of the String "  + name + " is " + nameLength);
 		
 		/* SubString */
 		String s = "Tech Elevator";
-		String subStringOfs = "";
+		String subStringOfs = s.substring(7,9); //CLASS NOTES: added substring
 		System.out.println(subStringOfs);
 		
-		String subStringToEnd = "";
+		String subStringToEnd = s.substring(5);  //CLASS NOTES added substring
 		System.out.println(subStringToEnd);
 		
 		/* Contains */
@@ -70,6 +98,17 @@ public class Lecture {
 		System.out.println("containsHello : "+containsHello);
 		boolean containsBogus = hello.contains("bogus");
 		System.out.println("containsBogus : "+containsBogus);
+		
+		//EXAMPLES referencing the Contains notes above
+		int index = hello.indexOf("World"); //check with debugger
+		
+		//Split example (slide 25)
+		String toBeSplit = "We hold these truths to be self-evident";
+		String[] splitArray = toBeSplit.split(" ");
+		
+		//Join example
+		String countDown = String.join("--> ", "5", "4", "3", "2", "1");
+		
 		
 		/* Other commonly used methods:
 		 * 
