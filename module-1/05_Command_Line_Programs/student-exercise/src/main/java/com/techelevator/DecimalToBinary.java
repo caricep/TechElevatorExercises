@@ -24,15 +24,28 @@ public class DecimalToBinary {
 		for ( ; in.hasNextInt() ; ) {
 			
 			int decimalValue = in.nextInt();
+			int divisionResult;
 			
-			int binaryValue = (decimalValue / 2);
-			if (decimalValue % 2 == 0) {
-				return 0; 
+			while (decimalValue > 0) {
+				if (decimalValue % 2 == 0) {
+					divisionResult = (decimalValue / 2);
+					System.out.print(0);
+			}
+				else if (decimalValue % 2 == 1) {
+					divisionResult = (decimalValue / 2);
+					System.out.print(1);
+			
+			
+				divisionResult = decimalValue % 2;
+			
+				
 			}
 			
+		
 			
-			System.out.printf("\n%s in binary is %s ", decimalValue, binaryValue);
-		}
+		//	System.out.printf("\n%s in binary is %s ", decimalValue, binaryNumber);
+			}
+			}
 	}
 
 }
