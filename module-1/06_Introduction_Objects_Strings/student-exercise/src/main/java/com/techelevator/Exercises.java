@@ -71,7 +71,12 @@ public class Exercises {
 	 firstTwo("ab") → "ab"
 	 */
 	public String firstTwo(String str) {
-		return null;
+		if (str.length() <= 2) {
+			return str.substring(0);
+		} else if (str.length() > 2) {
+			return str.substring(0, 2);
+		}
+		return "";
 	}
 
 	/*
