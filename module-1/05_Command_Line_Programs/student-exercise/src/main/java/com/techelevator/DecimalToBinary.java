@@ -10,7 +10,7 @@ Please enter in a series of decimal values (separated by spaces): 460 8218 1 313
 1 in binary is 1
 31313 in binary is 111101001010001
 987654321 in binary is 111010110111100110100010110001
- 
+ .
  */
 
 public class DecimalToBinary {
