@@ -310,7 +310,18 @@ public class Exercises {
 	 frontTimes("Abc", 3) → "AbcAbcAbc"
 	 */
 	public String frontTimes(String str, int n) {
-		return null;
+		String firstCharacters = "";
+		int originalStringLength = str.length();
+		int i = 0;
+		
+		for (i = 0 ; i < n ; i++)
+			if (originalStringLength < 3) {
+				firstCharacters = str.substring(0) + firstCharacters;
+			} else if (originalStringLength >= 3) {
+				firstCharacters = str.substring(0,3) + firstCharacters;
+			}
+		
+		return firstCharacters;
 	}
 
 	/*
