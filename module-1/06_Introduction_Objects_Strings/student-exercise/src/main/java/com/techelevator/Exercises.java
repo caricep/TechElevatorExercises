@@ -257,7 +257,13 @@ public class Exercises {
 	 middleThree("solving") → "lvi"
 	 */
 	public String middleThree(String str) {
-		return null;
+		int stringLengthOdd = str.length();
+		
+		if (stringLengthOdd % 2 == 1) {
+			return str.substring((stringLengthOdd - 2) / 2, ((stringLengthOdd - 2) / 2) + 3);
+					
+		}			
+			return "";
 	}
 
 	/*
