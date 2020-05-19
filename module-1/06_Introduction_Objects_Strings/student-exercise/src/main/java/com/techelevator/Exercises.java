@@ -349,7 +349,17 @@ public class Exercises {
 	 doubleX("xxxxx") → true
 	 */
 	public boolean doubleX(String str) {
-		return false;
+		
+		int oneX = str.indexOf("x");
+		
+		if (oneX < 0) {
+			return false;
+		} else if (oneX > str.length() - 1) {
+			return false;
+		} else if (oneX < str.length() - 1 && str.substring(oneX, oneX + 2).equals("xx")) {
+			return true;
+		}
+	return false;
 	}
 
 	/*
