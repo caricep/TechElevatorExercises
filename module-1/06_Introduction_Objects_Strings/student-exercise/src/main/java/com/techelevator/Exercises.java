@@ -240,6 +240,7 @@ public class Exercises {
 	 twoChar("java", 3) → "ja"
 	 */
 	public String twoChar(String str, int index) {
+		str.indexOf(index);
 		return null;
 	}
 
