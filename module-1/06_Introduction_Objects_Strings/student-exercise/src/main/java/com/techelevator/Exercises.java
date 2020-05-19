@@ -331,7 +331,15 @@ public class Exercises {
 	 countXX("xxxx") →
 	 */
 	public int countXX(String str) {
-		return 0;
+		int countOfXX = 0;
+		int i = 0;
+		
+		for (i = 0; i < str.length() - 1; i++) {
+			if (str.substring(i, i + 2).equals("xx")) {
+				countOfXX++;
+			}
+		}
+		return countOfXX;
 	}
 
 	/*
