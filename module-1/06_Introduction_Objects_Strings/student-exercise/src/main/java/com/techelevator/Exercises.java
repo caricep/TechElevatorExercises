@@ -386,7 +386,16 @@ public class Exercises {
 	 stringSplosion("ab") → "aab"
 	 */
 	public String stringSplosion(String str) {
-		return null;
+	
+		String newString = "";
+		int i = 0;
+		
+		for (i = 0; i < str.length() + 1; i++) {
+			newString = newString + str.substring(0, i);
+		}
+			
+		
+		return newString;
 	}
 
 	/*
