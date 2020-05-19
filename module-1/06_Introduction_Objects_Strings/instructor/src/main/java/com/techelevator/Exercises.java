@@ -11,7 +11,7 @@ public class Exercises {
 	public String helloName(String name) {
 		return null;
 	}
-
+	
 	/*
 	 Given two strings, a and b, return the result of putting them together in the order abba,
 	 e.g. "Hi" and "Bye" returns "HiByeByeHi".
@@ -55,7 +55,8 @@ public class Exercises {
 	 extraEnd("Hi") → "HiHiHi"
 	 */
 	public String extraEnd(String str) {
-		return null;
+		String lastTwo = str.substring(str.length() - 2);
+		return lastTwo + lastTwo + lastTwo;
 	}
 
 	/*

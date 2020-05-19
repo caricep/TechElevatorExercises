@@ -6,7 +6,12 @@ public class Lecture {
 	public static void main(String[] args) {
 
 		/* Object Instantiation */
-
+		House houseAt443WinstonSt = new House(1800, "443 Winston St", "Cornflower Blue");
+		
+		House houseTwo = new House(200, "somewhere", "red");
+		
+		houseAt443WinstonSt.setColor("Orange");
+		houseTwo.setAddress("123 Street");
 		
 		/* Value Type */
 		int x = 10;
@@ -14,12 +19,33 @@ public class Lecture {
 		
 		/* Reference Type */
 		int[] numbers = { 10, 20, 30 , 40 };
-	
+		int[] numbers2 = numbers;
+		numbers2[2] = 500;
+		numbers[0] = 128;
 		
 		
 		String firstName = "joe";
 		firstName.toUpperCase();
-
+		String firstNameUpperCase = firstName.toUpperCase();
+		
+		firstNameUpperCase = null;
+		// This line will cause a nullPointerException
+		//firstNameUpperCase.toLowerCase();
+		
+		String other = new String("joe");
+		
+		if (firstName == other) {
+			System.out.println("==");
+		}
+		
+		if (firstName.equals(other)) {
+			System.out.println(".equals");
+		}
+		
+		String oneMore = firstName;
+		if (firstName == oneMore) {
+			System.out.println("==");
+		}
 		
 		System.out.println("************************************");
 		System.out.println("****** MAKING A STRING OBJECT ******");
@@ -51,15 +77,15 @@ public class Lecture {
 		System.out.println(fourth);
 		
 		/* length */
-		int nameLength = 0;
+		int nameLength = name.length();
 		System.out.println("The length of the String "  + name + " is " + nameLength);
 		
 		/* SubString */
 		String s = "Tech Elevator";
-		String subStringOfs = "";
+		String subStringOfs = s.substring(7, 9);
 		System.out.println(subStringOfs);
 		
-		String subStringToEnd = "";
+		String subStringToEnd = s.substring(5);
 		System.out.println(subStringToEnd);
 		
 		/* Contains */
@@ -70,6 +96,15 @@ public class Lecture {
 		System.out.println("containsHello : "+containsHello);
 		boolean containsBogus = hello.contains("bogus");
 		System.out.println("containsBogus : "+containsBogus);
+		
+		int index = hello.indexOf("World");
+
+		String toBeSplit = "We hold these truths to be self-evident";
+		String[] splitArray = toBeSplit.split(" ");
+		
+		
+		String countDown = String.join(" <-- ", "1", "2", "3", "Four", "Five");
+		System.out.println(countDown);
 		
 		/* Other commonly used methods:
 		 * 
