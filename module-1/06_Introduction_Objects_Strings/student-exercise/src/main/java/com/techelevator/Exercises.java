@@ -293,7 +293,13 @@ public class Exercises {
 	 stringTimes("Hi", 1) → "Hi"
 	 */
 	public String stringTimes(String str, int n) {
-		return null;
+		String newString = "";
+		int i = 0;
+		
+		for (i = 0 ; i < n ; i++) {
+			newString = str + newString;
+		}
+		return newString;
 	}
 
 	/*
