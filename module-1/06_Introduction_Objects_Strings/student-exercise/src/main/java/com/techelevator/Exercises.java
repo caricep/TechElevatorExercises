@@ -240,10 +240,14 @@ public class Exercises {
 	 twoChar("java", 3) → "ja"
 	 */
 	public String twoChar(String str, int index) {
-		str.indexOf(index);
+		int strLength = str.length();
 		
-		return "";
-	}
+		if (strLength < index + 2 || index < 0) {
+			return str.substring(0, 2);
+		}
+		return str.substring(index, index + 2);
+		
+}
 
 	/*
 	 Given a string of odd length, return the string length 3 from its middle, so "Candy" yields "and".
