@@ -112,11 +112,18 @@ public class Exercises {
 	 comboString("aaa", "b") → "baaab"
 	 */
 	public String comboString(String a, String b) {
-		//if (a.length() > b.length()); {
-		//}	return b + a + b;
+		int lengthOfA = a.length();
+		int lengthOfB = b.length();
 		
+		if (lengthOfA > lengthOfB) {
+			return b + a + b;
+		} if (lengthOfB > lengthOfA) {
+			return a + b + a;
+		
+		}
 		return "";
 	}
+
 
 	/*
 	 Given 2 strings, return their concatenation, except omit the first char of each. The strings will
@@ -180,9 +187,12 @@ public class Exercises {
 	 withoutEnd2("ab") → ""
 	 */
 	public String withoutEnd2(String str) {	
-		if (str.length() > 0) { 
-			return str.substring(1, str.length() - 2) + str.substring(str.length() - 2);
+		int lengthOfString = str.length();
+		
+		if (lengthOfString > 2) { 
+			return str.substring(1, lengthOfString - 1);
 		}
+		
 	return "";
 	}
 
@@ -205,9 +215,9 @@ public class Exercises {
 	 endsLy("oddy") → false
 	 */
 	public boolean endsLy(String str) {
-		
-		return false;
-	}
+		return str.endsWith("ly");
+	}			
+				
 
 	/*
 	 Given a string and an int n, return a string made of the first and last n chars from the string. The
