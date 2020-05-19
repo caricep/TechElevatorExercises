@@ -369,7 +369,14 @@ public class Exercises {
 	 stringBits("Heeololeo") → "Hello"
 	 */
 	public String stringBits(String str) {
-		return null;
+		
+		String everyOtherLetter = "";
+		int i = 0;
+		
+		for (i = 0; i < str.length(); i += 2)
+			everyOtherLetter = everyOtherLetter + str.charAt(i);
+			
+		return everyOtherLetter;
 	}
 
 	/*
