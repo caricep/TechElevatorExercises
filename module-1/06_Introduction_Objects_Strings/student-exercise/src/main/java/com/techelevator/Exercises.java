@@ -242,7 +242,7 @@ public class Exercises {
 	public String twoChar(String str, int index) {
 		int strLength = str.length();
 		
-		if (strLength < index + 2 || index < 0) {
+		if (strLength < index + 2 ||index < 0) {
 			return str.substring(0, 2);
 		}
 		return str.substring(index, index + 2);
@@ -263,7 +263,7 @@ public class Exercises {
 			return str.substring((stringLengthOdd - 2) / 2, ((stringLengthOdd - 2) / 2) + 3);
 					
 		}			
-			return "";
+		return "";
 	}
 
 	/*
@@ -275,7 +275,15 @@ public class Exercises {
 	 hasBad("xxbadxx") → false
 	 */
 	public boolean hasBad(String str) {
-		return false;
+		
+		if (str.length() < 3) {
+			return false; 
+		} else if (str.length() > 3 && str.substring(1, 4).equals("bad") ||
+				str.substring(0, 3).equals("bad")) {
+			return true;
+		}
+	return false;	
+
 	}
 
 	/*
