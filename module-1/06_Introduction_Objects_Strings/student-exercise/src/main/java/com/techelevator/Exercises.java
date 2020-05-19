@@ -241,7 +241,8 @@ public class Exercises {
 	 */
 	public String twoChar(String str, int index) {
 		str.indexOf(index);
-		return null;
+		
+		return "";
 	}
 
 	/*
