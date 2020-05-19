@@ -165,9 +165,13 @@ public class Exercises {
 	 theEnd("oh", true) → "o"
 	 */
 	public String theEnd(String str, boolean front) {
-		return null;
-	}
-
+		if (front) {
+			return str.substring(0, 1);
+		} if (front == false)
+		return str.substring(str.length() - 1);
+	
+		return str.substring(0, 1);
+}
 	/*
 	 Given a string, return a version without both the first and last char of the string. The string
 	 may be any length, including 0.
@@ -175,8 +179,11 @@ public class Exercises {
 	 withoutEnd2("abc") → "b"
 	 withoutEnd2("ab") → ""
 	 */
-	public String withoutEnd2(String str) {
-		return null;
+	public String withoutEnd2(String str) {	
+		if (str.length() > 0) { 
+			return str.substring(1, str.length() - 2) + str.substring(str.length() - 2);
+		}
+	return "";
 	}
 
 	/*
@@ -187,7 +194,8 @@ public class Exercises {
 	 middleTwo("Practice") → "ct"
 	 */
 	public String middleTwo(String str) {
-		return null;
+			return str.substring(str.length() / 2 - 1, str.length() / 2 + 1);
+		
 	}
 
 	/*
