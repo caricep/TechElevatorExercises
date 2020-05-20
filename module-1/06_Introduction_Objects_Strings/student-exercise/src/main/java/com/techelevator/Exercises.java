@@ -423,13 +423,12 @@ public class Exercises {
 	public String stringX(String str) {
 		
 		String xRemoved = "";
-		int i = 0;
 		
-		for (i = 0; i < str.length(); i++) {
+		for (int i = 0; i < str.length(); i++) {
 			if (str.substring(1, str.length() - 1).contains("x")) {
-				return str.substring(0, str.length() - 1);
+			
+				xRemoved = str.substring(0,0) + str.substring(1,str.length());
 		
-				xRemoved = xRemoved + ;
 			}
 		}
 		return xRemoved;
@@ -442,7 +441,19 @@ public class Exercises {
 	 altPairs("CodingHorror") → "Congrr"
 	 */
 	public String altPairs(String str) {
-		return null;
+		
+		String newPairs = "";
+		
+		
+		for (int i = 0; i < str.length(); i += 4) {
+			int newStrLength = i + 2;
+			if (newStrLength > str.length()) {
+				newStrLength = str.length();
+			}
+			newPairs = newPairs + str.substring(i, newStrLength);
+		}
+		
+		return newPairs;
 	}
 
 	/*
