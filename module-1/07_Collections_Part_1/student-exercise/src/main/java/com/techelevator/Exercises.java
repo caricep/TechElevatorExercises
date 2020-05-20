@@ -148,6 +148,20 @@ public class Exercises {
 	 foundIntTwice( [9, 23, 44, 2, 88, 44], 44) -> true
 	 */
 	public boolean foundIntTwice(List<Integer> integerList, int intToFind) {
+		
+		int intCount = 0;
+		
+		for (int number : integerList) {
+		
+			if (intToFind == number) {
+				intCount = intCount + 1;
+			}
+		}
+			if (intCount >= 2) {
+					return true;
+			
+			} 
+		
 		return false;
 	}
 
