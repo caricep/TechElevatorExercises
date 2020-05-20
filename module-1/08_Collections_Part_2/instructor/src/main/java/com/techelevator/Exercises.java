@@ -1,7 +1,10 @@
 package com.techelevator;
 
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class Exercises {
 
@@ -119,7 +122,8 @@ public class Exercises {
 	}
 
 	/*
-	 * Given an array of int values, return a Map<Integer, Integer> with a key for each int, with the value the
+	 * Given an array of int values, return a Map<Integer, Integer> 
+	 * with a key for each int, with the value the
 	 * number of times that int appears in the array.
 	 *
 	 * ** The lesser known cousin of the the classic wordCount **
@@ -130,7 +134,37 @@ public class Exercises {
 	 *
 	 */
 	public Map<Integer, Integer> integerCount(int[] ints) {
-		return null;
+		
+		// Create a map to return
+		Map<Integer, Integer> counts = new HashMap<Integer, Integer>();
+		
+		// Create a set to get the unique numbers in the list
+		Set<Integer> uniqueInts = new HashSet<Integer>();
+		// Add the nums from the array to the set so we have a list of only unique numbers
+		for (int i : ints) {
+			uniqueInts.add(i);
+		}
+		
+		// Loop through the unique numbers
+		for ( int i : uniqueInts) {
+			// For each unique number loop through the original array
+			for (int num : ints) {
+				// If the number is found
+				if (i == num) {
+					// and the key is in the map
+					if (counts.containsKey( i )) {
+						// Add 1 to its count
+						counts.put(i, counts.get(i) + 1);
+					} else {
+						// otherwise, add the key with a starting value of 1
+						counts.put(i, 1);
+					}
+				}
+			}
+		}
+		
+		// return the Map
+		return counts;
 	}
 
 	/*
