@@ -112,11 +112,9 @@ public class Exercises {
 	 */
 	public Integer findLargest(List<Integer> integerList) {
 		
-		Integer[] integerArray = integerList.toArray( new Integer[ integerList.size() ] );
+		int largestNum = 0;
 		
-		int largestNum = integerArray[0];
-		
-		for (int number: integerArray) {
+		for (int number: integerList) {
 			if (largestNum < number)
 				largestNum = number;
 		}
