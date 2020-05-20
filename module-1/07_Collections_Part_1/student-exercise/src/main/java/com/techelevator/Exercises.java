@@ -256,7 +256,6 @@ public class Exercises {
 		}
 		
 		return allSeats;
-		///disregard the "multiple queues" and use a bunch of lists per instructor
 		
 	}
 
