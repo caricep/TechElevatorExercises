@@ -1,6 +1,7 @@
 package com.techelevator;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Stack;
 
@@ -179,6 +180,18 @@ public class Exercises {
 	 equals "1")
 	 */
 	public List<String> fizzBuzzList(Integer[] integerArray) {
+		
+		List<String> stringFizzBuzzList = new ArrayList<String>();
+		
+		for (Integer stringInt : integerArray) {
+			if (stringInt % 3 == 0)
+				stringInt.toString().equals("Fizz");
+			if (stringInt % 5 ==0)
+				stringInt.toString().equals("Buzz");
+			if (stringInt % 3 == 0 && stringInt % 5 == 0)
+				stringInt.toString().equals("FizzBuzz");
+		}	
+		
 		return null;
 	}
 
