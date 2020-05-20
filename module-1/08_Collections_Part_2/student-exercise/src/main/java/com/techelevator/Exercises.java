@@ -1,7 +1,9 @@
 package com.techelevator;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -246,7 +248,15 @@ public class Exercises {
 	 distinctValues( ["jingle", "bells", "jingle", "bells", "jingle", "all", "the", "way"] ) -> ["jingle", "bells", "all", "the", "way"]
 	 */
 	public List<String> distinctValues(List<String> stringList) {
-		return null;
+		
+		Set<String> distinctColors = new LinkedHashSet<String>();
+		List<String> colorsList = new ArrayList<String>();
+		
+		distinctColors.addAll(stringList);
+		colorsList.addAll(distinctColors);
+		
+		
+		return colorsList;
 	}
 
 }
