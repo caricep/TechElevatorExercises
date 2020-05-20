@@ -423,13 +423,13 @@ public class Exercises {
 	public String stringX(String str) {
 		
 		String xRemoved = "";
-		
-		for (int i = 0; i < str.length(); i++) {
-			if (str.substring(1, str.length() - 1).contains("x")) {			//Needs to not contain X
 			
-				xRemoved = str.substring(0,0) + str.substring(1,str.length());		//Place-holders to come back to after help
-		
-			}
+		for (int i = 0; i < str.length(); i++) {
+			char noX = str.charAt(i);
+			if (noX != 'x') {
+				xRemoved = str.substring(0, str.length());				//need to take out the Xs, come back after help
+			}				
+			
 		}
 		return xRemoved;
 	}
