@@ -218,8 +218,7 @@ public class Exercises {
 			if (i < listTwo.size()) {
 				combinedIntList.add(listTwo.get(i));
 			}
-		}
-			
+		}	
 		
 		return combinedIntList;
 	}
@@ -234,7 +233,29 @@ public class Exercises {
 	 boardingGate( [0, -1, 44, 31, 17, 7, 27, 16, 26, 6] ) -> [7, 6, 17, 16, 27, 26]
 	 */
 	public List<Integer> boardingGate(List<Integer> seatNumberList) {
-		return null;
+		
+		List<Integer> seatsOneToTen = new ArrayList<Integer>();
+		List<Integer> seatsElevenToTwenty = new ArrayList<Integer>();
+		List<Integer> seatsTwentyOneToThirty = new ArrayList<Integer>();
+		List<Integer> allSeats = new ArrayList<Integer>();
+		
+		for (Integer seatNumber : seatNumberList) {
+			if (seatNumber > 0 && seatNumber < 10) {
+				seatsOneToTen.add(seatNumber);
+			}
+			else if (seatNumber > 10 && seatNumber < 21) {
+				seatsElevenToTwenty.add(seatNumber);
+			}
+			else if (seatNumber > 20 && seatNumber < 30) {
+				seatsTwentyOneToThirty.add(seatNumber);
+			}
+			
+			allSeats.addAll(seatsOneToTen);
+			allSeats.addAll(seatsElevenToTwenty);
+			allSeats.addAll(seatsTwentyOneToThirty);
+		}
+		
+		return allSeats;
 		///disregard the "multiple queues" and use a bunch of lists per instructor
 		
 	}
