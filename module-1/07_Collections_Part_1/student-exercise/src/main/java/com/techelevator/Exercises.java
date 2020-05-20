@@ -184,15 +184,18 @@ public class Exercises {
 		List<String> stringFizzBuzzList = new ArrayList<String>();
 		
 		for (Integer stringInt : integerArray) {
-			if (stringInt % 3 == 0)
-				stringInt.toString().equals("Fizz");
-			if (stringInt % 5 ==0)
-				stringInt.toString().equals("Buzz");
-			if (stringInt % 3 == 0 && stringInt % 5 == 0)
-				stringInt.toString().equals("FizzBuzz");
+		
+			if (stringInt % 3 == 0 && stringInt % 5 == 0) {
+				stringFizzBuzzList.add("FizzBuzz");
+			} else if (stringInt % 3 == 0) {
+				stringFizzBuzzList.add("Fizz");
+			} else if (stringInt % 5 == 0) {
+				stringFizzBuzzList.add("Buzz");
+			}	
+			else stringFizzBuzzList.add(stringInt.toString());
 		}	
 		
-		return null;
+		return stringFizzBuzzList;
 	}
 
 	/*
