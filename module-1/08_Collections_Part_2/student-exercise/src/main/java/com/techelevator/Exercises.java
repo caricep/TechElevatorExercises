@@ -1,7 +1,10 @@
 package com.techelevator;
 
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class Exercises {
 
@@ -35,6 +38,8 @@ public class Exercises {
 	 *
 	 */
 	public String animalGroupName(String animalName) {
+		//build map of animals, case insensitive
+		
 		return null;
 	}
 
@@ -75,6 +80,8 @@ public class Exercises {
 	 *
 	 */
 	public Map<String, Integer> robPeterToPayPaul(Map<String, Integer> peterPaul) {
+		//create calculation to use later like class example
+		
 		return null;
 	}
 
@@ -88,6 +95,8 @@ public class Exercises {
 	 *
 	 */
 	public Map<String, Integer> peterPaulPartnership(Map<String, Integer> peterPaul) {
+		//create calculation to use later like class example
+		
 		return null;
 	}
 
@@ -130,7 +139,27 @@ public class Exercises {
 	 *
 	 */
 	public Map<Integer, Integer> integerCount(int[] ints) {
-		return null;
+		
+		Map<Integer, Integer> counts = new HashMap<Integer, Integer>();
+		
+		Set<Integer> uniqueInts = new HashSet<Integer>();
+		for (int i : ints) {
+			uniqueInts.add(i);
+		}
+		
+		for (int i : uniqueInts) {
+			for (int num : ints) {
+				if (i == num) {
+					if (counts.containsKey( i )) {
+					counts.put(i, counts.get(i) + 1);
+				} else {
+					counts.put(i, 1);
+				}
+				}
+			}
+		}
+		
+		return counts;
 	}
 
 	/*
