@@ -52,9 +52,9 @@ public class Exercises {
 		animalGroup.put("Dog", "Pack");
 		animalGroup.put("Crocodile", "Float");
 		
-		for (String key : animalGroup.keySet()) {
-			key.equalsIgnoreCase(key);
-			System.out.println(animalGroup.get(key));
+		if (animalGroup.containsKey(animalName)) {
+			return animalGroup.get(animalName);
+			
 		}	
 		return "unknown";
 		
@@ -83,7 +83,21 @@ public class Exercises {
 	 *
 	 */
 	public Double isItOnSale(String itemNumber) {
-		return null;
+		
+		Map<String, Double> itemDiscount = new HashMap<String, Double>(); 
+		
+		itemDiscount.put("KITCHEN4001", 0.20);
+		itemDiscount.put("GARAGE1070", 0.15);
+		itemDiscount.put("LIVINGROOM", 0.10);
+		itemDiscount.put("KITCHEN6073", 0.40);
+		itemDiscount.put("BEDROOM3434", 0.60);
+		itemDiscount.put("BATH0073", 0.15);
+		
+		if (itemDiscount.containsKey(itemNumber.toUpperCase())){
+			return itemDiscount.get(itemNumber.toUpperCase());
+		}		
+		
+		return 0.00;
 	}
 
 	/*
