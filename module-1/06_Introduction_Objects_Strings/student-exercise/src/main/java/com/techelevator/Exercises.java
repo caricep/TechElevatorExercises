@@ -467,6 +467,7 @@ public class Exercises {
 		String noYak = "";
 		
 		for (int i = 0; i < str.length(); i++)
+			
 			if (str.substring(0, str.length()).contains("yak")) {		// Need to make it not contain "yak"; come back after help
 				i = i + 2; 
 			//	noYak = noYak;
