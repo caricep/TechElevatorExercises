@@ -38,9 +38,23 @@ public class Exercises {
 	 *
 	 */
 	public String animalGroupName(String animalName) {
-		//build map of animals, case insensitive
 		
-		return null;
+		Map<String, String> animalGroup = new HashMap<String, String>();
+		
+		animalGroup.put("Rhino", "Crash");
+		animalGroup.put("Giraffe", "Tower");
+		animalGroup.put("Elephant", "Herd");
+		animalGroup.put("Lion", "Pride");
+		animalGroup.put("Crow", "Murder");
+		animalGroup.put("Pigeon", "Kit");
+		animalGroup.put("Flamingo", "Pat");
+		animalGroup.put("Deer", "Herd");
+		animalGroup.put("Dog", "Pack");
+		animalGroup.put("Crocodile", "Float");
+		
+			
+		
+		return animalGroup;
 	}
 
 	/*
