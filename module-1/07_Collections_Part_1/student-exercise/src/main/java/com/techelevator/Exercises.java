@@ -206,7 +206,22 @@ public class Exercises {
 	 interleaveLists( [1, 2, 3], [4, 5, 6] )  ->  [1, 4, 2, 5, 3, 6]
 	 */
 	public List<Integer> interleaveLists(List<Integer> listOne, List<Integer> listTwo) {
-		return null;
+		
+		List<Integer> combinedIntList = new ArrayList<Integer>();
+		
+		int longestList = Math.max(listOne.size(), listTwo.size());
+		
+		for (int i = 0; i < longestList; i++) {
+			if (i < listOne.size()) {
+				combinedIntList.add(listOne.get(i));
+			}
+			if (i < listTwo.size()) {
+				combinedIntList.add(listTwo.get(i));
+			}
+		}
+			
+		
+		return combinedIntList;
 	}
 
 	/*
