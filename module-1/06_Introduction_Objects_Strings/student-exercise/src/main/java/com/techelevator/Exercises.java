@@ -427,12 +427,12 @@ public class Exercises {
 		for (int i = 0; i < str.length(); i++) {
 			char noX = str.charAt(i);
 			if (noX != 'x') {
-				xRemoved = str.substring(0, str.length());				//need to take out the Xs, come back after help
-			}				
-			
-		}
-		return xRemoved;
+				xRemoved = xRemoved + noX;			
+			} 
+		} return str.charAt(0) + xRemoved + str.charAt(str.length() - 1);	//need another instance without duplicates, come back after help
+		
 	}
+	
 
 	/*
 	 Given a string, return a string made of the chars at indexes 0,1, 4,5, 8,9 ... so "kittens" yields "kien".
