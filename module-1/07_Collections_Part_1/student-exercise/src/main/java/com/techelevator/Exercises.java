@@ -88,10 +88,8 @@ public class Exercises {
 		reverseStack.addAll(stringList);
 		
 		for (String word : stringList) {
-			listInReverse.add(reverseStack.pop());
-			
+			listInReverse.add(reverseStack.pop());	
 		}
-		
 		
 		return listInReverse;
 	}
@@ -106,10 +104,13 @@ public class Exercises {
 		
 		List<Double> doublesList = new ArrayList<Double>();
 		
+		double doubleNumber;
+		
 		for (int number : intArray) {
 			doublesList.add((double) number / 2);
 		}
 		
+	
 		return doublesList;
 	}
 
@@ -120,6 +121,9 @@ public class Exercises {
 	 findLargest( [34070, 1380, 81238, 7782, 234, 64362, 627] ) -> 64362
 	 */
 	public Integer findLargest(List<Integer> integerList) {
+		
+		
+		
 		return null;
 	}
 
