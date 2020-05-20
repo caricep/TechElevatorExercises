@@ -242,7 +242,7 @@ public class Exercises {
 	public String twoChar(String str, int index) {
 		int strLength = str.length();
 		
-		if (strLength < index + 2 ||index < 0) {
+		if (strLength < index + 2 || index < 0) {
 			return str.substring(0, 2);
 		}
 		return str.substring(index, index + 2);
@@ -425,9 +425,9 @@ public class Exercises {
 		String xRemoved = "";
 		
 		for (int i = 0; i < str.length(); i++) {
-			if (str.substring(1, str.length() - 1).contains("x")) {
+			if (str.substring(1, str.length() - 1).contains("x")) {			//Needs to not contain X
 			
-				xRemoved = str.substring(0,0) + str.substring(1,str.length());
+				xRemoved = str.substring(0,0) + str.substring(1,str.length());		//Place-holders to come back to after help
 		
 			}
 		}
@@ -464,7 +464,15 @@ public class Exercises {
 	 stringYak("yak123ya") → "123ya"
 	 */
 	public String stringYak(String str) {
-		return null;
+		String noYak = "";
+		
+		for (int i = 0; i < str.length(); i++)
+			if (str.substring(0, str.length()).contains("yak")) {		// Need to make it not contain "yak"; come back after help
+				i = i + 2; 
+			//	noYak = noYak;
+			}
+				
+		return noYak;
 	}
 
 }
