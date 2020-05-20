@@ -294,9 +294,8 @@ public class Exercises {
 	 */
 	public String stringTimes(String str, int n) {
 		String newString = "";
-		int i = 0;
 		
-		for (i = 0 ; i < n ; i++) {
+		for (int i = 0 ; i < n ; i++) {
 			newString = str + newString;
 		}
 		return newString;
@@ -310,11 +309,11 @@ public class Exercises {
 	 frontTimes("Abc", 3) → "AbcAbcAbc"
 	 */
 	public String frontTimes(String str, int n) {
+		
 		String firstCharacters = "";
 		int originalStringLength = str.length();
-		int i = 0;
 		
-		for (i = 0 ; i < n ; i++)
+		for (int i = 0 ; i < n ; i++)
 			if (originalStringLength < 3) {
 				firstCharacters = str.substring(0) + firstCharacters;
 			} else if (originalStringLength >= 3) {
@@ -331,10 +330,10 @@ public class Exercises {
 	 countXX("xxxx") →
 	 */
 	public int countXX(String str) {
-		int countOfXX = 0;
-		int i = 0;
 		
-		for (i = 0; i < str.length() - 1; i++) {
+		int countOfXX = 0;
+		
+		for (int i = 0; i < str.length() - 1; i++) {
 			if (str.substring(i, i + 2).equals("xx")) {
 				countOfXX++;
 			}
@@ -371,9 +370,8 @@ public class Exercises {
 	public String stringBits(String str) {
 		
 		String everyOtherLetter = "";
-		int i = 0;
 		
-		for (i = 0; i < str.length(); i += 2)
+		for (int i = 0; i < str.length(); i += 2)
 			everyOtherLetter = everyOtherLetter + str.charAt(i);
 			
 		return everyOtherLetter;
@@ -388,12 +386,10 @@ public class Exercises {
 	public String stringSplosion(String str) {
 	
 		String newString = "";
-		int i = 0;
 		
-		for (i = 0; i < str.length() + 1; i++) {
+		for (int i = 0; i < str.length() + 1; i++) {
 			newString = newString + str.substring(0, i);
 		}
-			
 		
 		return newString;
 	}
@@ -406,7 +402,15 @@ public class Exercises {
 	 last2("axxxaaxx") → 2
 	 */
 	public int last2(String str) {
-		return 0;
+		
+		int countLengthTwo = 0;
+		
+		for (int i = 0; i < str.length() - 2; i++) {
+			if (str.substring(i, i + 2).equals(str.substring(str.length() - 2)))
+				countLengthTwo++;
+		}
+		
+		return countLengthTwo;
 	}
 
 	/*
@@ -417,7 +421,18 @@ public class Exercises {
 	 stringX("xabxxxcdx") → "xabcdx"
 	 */
 	public String stringX(String str) {
-		return null;
+		
+		String xRemoved = "";
+		int i = 0;
+		
+		for (i = 0; i < str.length(); i++) {
+			if (str.substring(1, str.length() - 1).contains("x")) {
+				return str.substring(0, str.length() - 1);
+		
+				xRemoved = xRemoved + ;
+			}
+		}
+		return xRemoved;
 	}
 
 	/*
