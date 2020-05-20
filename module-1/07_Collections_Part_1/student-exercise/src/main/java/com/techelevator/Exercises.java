@@ -82,11 +82,14 @@ public class Exercises {
 	 */
 	public List<String> reverseList(List<String> stringList) {
 		
-		List<String> listInReverse = new ArrayList<String>();
 		Stack<String> reverseStack = new Stack<String>();
+		List<String> listInReverse = new ArrayList<String>();
 		
-		for (String word : listInReverse) {
-			reverseStack.push(word);
+		reverseStack.addAll(stringList);
+		
+		for (String word : stringList) {
+			listInReverse.add(reverseStack.pop());
+			
 		}
 		
 		
@@ -100,7 +103,14 @@ public class Exercises {
 	 arrayInt2ListDouble( {84, 99, 3285, 13, 877} ) -> [42, 49.5, 1642.5, 6.5, 438.5]
 	 */
 	public List<Double> arrayInt2ListDouble(int[] intArray) {
-		return null;
+		
+		List<Double> doublesList = new ArrayList<Double>();
+		
+		for (int number : intArray) {
+			doublesList.add((double) number / 2);
+		}
+		
+		return doublesList;
 	}
 
 	/*
