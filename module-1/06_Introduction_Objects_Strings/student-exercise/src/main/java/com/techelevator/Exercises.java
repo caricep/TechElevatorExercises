@@ -475,7 +475,7 @@ public class Exercises {
 			
 			if (str.substring(0, str.length()).contains("yak")) {		// Need to make it not contain "yak"; come back after help
 				i = i + 2; 
-			//	noYak = noYak;
+			
 			}
 				
 		return noYak;
