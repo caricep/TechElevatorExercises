@@ -1,16 +1,8 @@
 package com.techelevator;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Queue;
-import java.util.Set;
 import java.util.Stack;
-
-import javax.swing.JSpinner.ListEditor;
-import javax.swing.event.ListSelectionEvent;
 
 public class Exercises {
 
@@ -82,13 +74,13 @@ public class Exercises {
 	 */
 	public List<String> reverseList(List<String> stringList) {
 		
-		Stack<String> reverseStack = new Stack<String>();
+		Stack<String> listStack = new Stack<String>();
 		List<String> listInReverse = new ArrayList<String>();
 		
-		reverseStack.addAll(stringList);
+		listStack.addAll(stringList);
 		
 		for (String word : stringList) {
-			listInReverse.add(reverseStack.pop());	
+			listInReverse.add(listStack.pop());	
 		}
 		
 		return listInReverse;
@@ -104,13 +96,11 @@ public class Exercises {
 		
 		List<Double> doublesList = new ArrayList<Double>();
 		
-		double doubleNumber;
-		
-		for (int number : intArray) {
-			doublesList.add((double) number / 2);
+		for (double intNumber : intArray) {
+			double doubleNumber = (int) intNumber / 2;
+			doublesList.add(doubleNumber);
 		}
 		
-	
 		return doublesList;
 	}
 
@@ -122,9 +112,16 @@ public class Exercises {
 	 */
 	public Integer findLargest(List<Integer> integerList) {
 		
+		Integer[] integerArray = integerList.toArray( new Integer[ integerList.size() ] );
 		
+		int largestNum = integerArray[0];
 		
-		return null;
+		for (int number: integerArray) {
+			if (largestNum < number)
+				largestNum = number;
+		}
+		
+		return largestNum;
 	}
 
 	/*

@@ -424,13 +424,18 @@ public class Exercises {
 		
 		String xRemoved = "";
 			
-		for (int i = 0; i < str.length(); i++) {
+		for (int i = 1; i < str.length() - 1; i++) {
 			char noX = str.charAt(i);
 			if (noX != 'x') {
 				xRemoved = xRemoved + noX;			
 			} 
-		} return str.charAt(0) + xRemoved + str.charAt(str.length() - 1);	//need another instance without duplicates, come back after help
-		
+		} 
+		if (str.length() < 2) {
+			return str;
+		}
+		return str.charAt(0) + xRemoved + str.charAt(str.length() - 1);
+		 
+	 
 	}
 	
 

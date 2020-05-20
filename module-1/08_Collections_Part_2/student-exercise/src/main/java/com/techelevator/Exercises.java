@@ -52,9 +52,13 @@ public class Exercises {
 		animalGroup.put("Dog", "Pack");
 		animalGroup.put("Crocodile", "Float");
 		
-			
+		for (String key : animalGroup.keySet()) {
+			String value = animalGroup.get(key);
+			key.equalsIgnoreCase(value);
+			return value;
+		}	
+		return "unknown";
 		
-		return animalGroup;
 	}
 
 	/*
