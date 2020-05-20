@@ -114,7 +114,7 @@ public class Exercises {
 		
 		int largestNum = 0;
 		
-		for (int number: integerList) {
+		for (int number : integerList) {
 			if (largestNum < number)
 				largestNum = number;
 		}
@@ -129,7 +129,15 @@ public class Exercises {
 	 oddOnly( {734, 233, 782, 811, 3, 9999} ) -> [233, 811, 3, 9999]
 	 */
 	public List<Integer> oddOnly(Integer[] integerArray) {
-		return null;
+		
+		List<Integer> oddNumbers = new ArrayList<Integer>();
+		
+		for (int num : integerArray) {
+			if (num % 2 == 1)
+				oddNumbers.add(num);
+		}
+		
+		return oddNumbers;
 	}
 
 	/*
