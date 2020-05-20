@@ -24,7 +24,7 @@ public class AlgorithmComplexity {
 		//doesArrayContainDuplicates(array);
 		
 		// O(2n) : Exponential Complexity
-		//Fibonacci(count);
+		Fibonacci(count);
 		
 		long endTime = System.nanoTime();
 		long duration = (endTime - startTime);
