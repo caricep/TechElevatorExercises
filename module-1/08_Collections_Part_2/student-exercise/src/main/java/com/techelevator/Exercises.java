@@ -118,11 +118,10 @@ public class Exercises {
 		
 		int petersMoney = peterPaul.get("Peter");
 		int paulsMoney = peterPaul.get("Paul");
+		int halfOfPetersMoney = petersMoney / 2;
 		
 		money.put("Peter", petersMoney);
 		money.put("Paul", paulsMoney);
-		
-		int halfOfPetersMoney = petersMoney / 2;
 		
 		if (petersMoney > 0 && paulsMoney < 1000) {
 			money.put("Peter", petersMoney - halfOfPetersMoney);
@@ -142,9 +141,31 @@ public class Exercises {
 	 *
 	 */
 	public Map<String, Integer> peterPaulPartnership(Map<String, Integer> peterPaul) {
-		//create calculation to use later like class example
 		
-		return null;
+		Map<String, Integer> newMoney = new HashMap<String, Integer>();
+		
+		int petersMoney = peterPaul.get("Peter");
+		int paulsMoney = peterPaul.get("Paul");
+		int quarterOfPetersCurrentWorth = petersMoney / 4;
+		int quarterOfPaulsCurrentWorth = paulsMoney / 4;
+		int petersNewMoneyAfterPartnership = petersMoney - quarterOfPetersCurrentWorth;
+		int paulsNewMoneyAfterPartnership = paulsMoney - quarterOfPaulsCurrentWorth;
+		
+		newMoney.put("Peter", petersMoney);
+		newMoney.put("Paul", paulsMoney);
+		
+		if (petersMoney >= 5000 && paulsMoney >= 10000) {
+			newMoney.put("Peter", petersNewMoneyAfterPartnership);
+			newMoney.put("Paul", paulsNewMoneyAfterPartnership);
+			newMoney.put("PeterPaulPartnership", quarterOfPetersCurrentWorth + quarterOfPaulsCurrentWorth);
+		} else if (petersMoney < 5000 || paulsMoney < 10000) {
+			return peterPaul;
+		}
+		
+		return newMoney;
+		
+		
+		
 	}
 
 	/*
