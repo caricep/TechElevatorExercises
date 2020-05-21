@@ -179,8 +179,8 @@ public class Exercises {
 		
 		Map<String, String> firstLastChar = new HashMap<String, String>();
 		
-		for ( String s : words) {
-			firstLastChar.put(s.substring(0, 1), s.substring(s.length() - 1));
+		for ( String word : words) {
+			firstLastChar.put(word.substring(0, 1), word.substring(word.length() - 1));
 		}
 		
 		return firstLastChar;
@@ -282,9 +282,25 @@ public class Exercises {
 	 *
 	 */
 	public Map<String, Integer> consolidateInventory(Map<String, Integer> mainWarehouse, Map<String, Integer> remoteWarehouse) {
-		return null;
-	}
+		
+		Map<String, Integer> newWarehouse = new HashMap<String, Integer>();
+		
+		int value = 0;
+		
+		for (String sku : mainWarehouse.keySet()) {
+			if (mainWarehouse.containsKey(sku)) {
+				newWarehouse.put(sku, value);
+					if (remoteWarehouse.containsKey(sku)) {
+						 newWarehouse.put(sku, value);
+					}
+			}
+		}
 
+		
+		return newWarehouse;
+	}
+	
+	
 	/*
 	 * Just when you thought it was safe to get back in the water --- last2Revisited!!!!
 	 *
@@ -301,7 +317,10 @@ public class Exercises {
 	 *
 	 */
 	public Map<String, Integer> last2Revisited(String[] words) {
-		return null;
+		
+		Map<String, Integer> countTwo = new HashMap<String, Integer>();
+		
+		return countTwo;
 	}
 
 	/*
