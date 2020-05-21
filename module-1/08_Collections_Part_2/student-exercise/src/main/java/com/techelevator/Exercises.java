@@ -124,7 +124,7 @@ public class Exercises {
 		
 		int halfOfPetersMoney = petersMoney / 2;
 		
-		if (peterPaul.get("Peter") > 0 && peterPaul.get("Paul") < 1000) {
+		if (petersMoney > 0 && paulsMoney < 1000) {
 			money.put("Peter", petersMoney - halfOfPetersMoney);
 			money.put("Paul", paulsMoney + halfOfPetersMoney);
 		}
