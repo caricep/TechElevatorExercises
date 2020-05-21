@@ -285,18 +285,18 @@ public class Exercises {
 		
 		Map<String, Integer> newWarehouse = new HashMap<String, Integer>();
 		
-		int value = 0;
-		
 		for (String sku : mainWarehouse.keySet()) {
-			if (mainWarehouse.containsKey(sku)) {
-				newWarehouse.put(sku, value);
-					if (remoteWarehouse.containsKey(sku)) {
-						 newWarehouse.put(sku, value);
-					}
+			if (remoteWarehouse.containsKey(sku)) {
+				newWarehouse.put(sku, mainWarehouse.get(sku) + remoteWarehouse.get(sku));
+			} else {
+				newWarehouse.put(sku, mainWarehouse.get(sku));
 			}
 		}
-
-		
+		for (String sku : remoteWarehouse.keySet()) {
+			if (!mainWarehouse.containsKey(sku)) {
+				newWarehouse.put(sku, remoteWarehouse.get(sku));
+			}
+		}
 		return newWarehouse;
 	}
 	
