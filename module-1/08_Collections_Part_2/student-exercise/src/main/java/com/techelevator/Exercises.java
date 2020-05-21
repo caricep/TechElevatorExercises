@@ -54,9 +54,10 @@ public class Exercises {
 		animalGroup.put("Dog", "Pack");
 		animalGroup.put("Crocodile", "Float");
 		
-		if (animalGroup.containsKey(animalName)) {
-			return animalGroup.get(animalName);
-			
+		for (String key : animalGroup.keySet()) {
+			if (key.equalsIgnoreCase(animalName)) {
+				return animalGroup.get(key);
+			}
 		}	
 		return "unknown";
 		
@@ -95,8 +96,10 @@ public class Exercises {
 		itemDiscount.put("BEDROOM3434", 0.60);
 		itemDiscount.put("BATH0073", 0.15);
 		
-		if (itemDiscount.containsKey(itemNumber.toUpperCase())){
-			return itemDiscount.get(itemNumber.toUpperCase());
+		for (String key : itemDiscount.keySet()) {
+			if (key.equalsIgnoreCase(itemNumber)) {
+				return itemDiscount.get(key);
+			}
 		}		
 		
 		return 0.00;
@@ -151,9 +154,6 @@ public class Exercises {
 		int petersNewMoneyAfterPartnership = petersMoney - quarterOfPetersCurrentWorth;
 		int paulsNewMoneyAfterPartnership = paulsMoney - quarterOfPaulsCurrentWorth;
 		
-		newMoney.put("Peter", petersMoney);
-		newMoney.put("Paul", paulsMoney);
-		
 		if (petersMoney >= 5000 && paulsMoney >= 10000) {
 			newMoney.put("Peter", petersNewMoneyAfterPartnership);
 			newMoney.put("Paul", paulsNewMoneyAfterPartnership);
@@ -163,7 +163,6 @@ public class Exercises {
 		}
 		
 		return newMoney;
-		
 		
 		
 	}
@@ -177,7 +176,14 @@ public class Exercises {
 	 * beginningAndEnding(["muddy", "good", "moat", "good", "night"]) → {"g": "d", "m": "t", "n": "t"}
 	 */
 	public Map<String, String> beginningAndEnding(String[] words) {
-		return null;
+		
+		Map<String, String> firstLastChar = new HashMap<String, String>();
+		
+		for ( String s : words) {
+			firstLastChar.put(s.substring(0, 1), s.substring(s.length() - 1));
+		}
+		
+		return firstLastChar;
 	}
 
 	/*
@@ -192,7 +198,18 @@ public class Exercises {
 	 *
 	 */
 	public Map<String, Integer> wordCount(String[] words) {
-		return null;
+		
+		Map<String, Integer> count = new HashMap<String, Integer>();
+		
+		for (String word : words) {
+			if (count.containsKey(word)) {
+				count.put(word, count.get(word) + 1);
+			} else {
+				count.put(word, 1);
+			}
+		}
+		
+		return count;
 	}
 
 	/*
@@ -222,7 +239,7 @@ public class Exercises {
 					counts.put(i, counts.get(i) + 1);
 				} else {
 					counts.put(i, 1);
-				}
+					}
 				}
 			}
 		}
@@ -240,7 +257,18 @@ public class Exercises {
 	 *
 	 */
 	public Map<String, Boolean> wordMultiple(String[] words) {
-		return null;
+		
+		Map<String, Boolean> multiplewords = new HashMap<String, Boolean>();
+		
+		for (String word : words) {
+			if (multiplewords.containsKey(word) && multiplewords.containsValue(false)) {
+				multiplewords.put(word, true);
+			} else {
+				multiplewords.put(word, false);
+			}
+		}
+		
+		return multiplewords;
 	}
 
 	/*
