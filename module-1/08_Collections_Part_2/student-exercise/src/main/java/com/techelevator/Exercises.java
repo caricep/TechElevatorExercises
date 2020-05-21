@@ -113,9 +113,23 @@ public class Exercises {
 	 *
 	 */
 	public Map<String, Integer> robPeterToPayPaul(Map<String, Integer> peterPaul) {
-		//create calculation to use later like class example
 		
-		return null;
+		Map<String, Integer> money = new HashMap<String, Integer>();
+		
+		int petersMoney = peterPaul.get("Peter");
+		int paulsMoney = peterPaul.get("Paul");
+		
+		money.put("Peter", petersMoney);
+		money.put("Paul", paulsMoney);
+		
+		int halfOfPetersMoney = petersMoney / 2;
+		
+		if (peterPaul.get("Peter") > 0 && peterPaul.get("Paul") < 1000) {
+			money.put("Peter", petersMoney - halfOfPetersMoney);
+			money.put("Paul", paulsMoney + halfOfPetersMoney);
+		}
+		
+		return money;
 	}
 
     /*
