@@ -255,7 +255,6 @@ public class Exercises {
 		distinctColors.addAll(stringList);
 		colorsList.addAll(distinctColors);
 		
-		
 		return colorsList;
 	}
 
