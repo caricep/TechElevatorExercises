@@ -2,10 +2,11 @@ package com.techelevator.company;
 
 public class Company {
 
-	public String name; 
-	public int numberOfEmployees;
-	public double revenue;
-	public double expenses;
+	private String name; 
+	private int numberOfEmployees;
+	private double revenue;
+	private double expenses;
+	
 	
 	public String getName() {
 		return name;
