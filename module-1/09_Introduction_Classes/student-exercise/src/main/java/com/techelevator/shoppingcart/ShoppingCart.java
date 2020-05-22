@@ -15,6 +15,9 @@ public class ShoppingCart {
 	}
 
 	public double getAveragePricePerItem() {
+		if (totalNumberOfItems == 0) {
+			return 0;
+		}
 		return totalAmountOwed / totalNumberOfItems;
 	}
 	

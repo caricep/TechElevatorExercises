@@ -24,4 +24,6 @@ public class Calculator {
 		return this.result;
 	}
 	
+	
+	
 }
