@@ -24,6 +24,13 @@ public class Calculator {
 		return this.result;
 	}
 	
+	public void reset() {
+		this.result = 0;	
+	}
 	
+	public int subtract(int subtrahend) {
+		this.result = result - subtrahend;
+		return this.result;
+	}
 	
 }
