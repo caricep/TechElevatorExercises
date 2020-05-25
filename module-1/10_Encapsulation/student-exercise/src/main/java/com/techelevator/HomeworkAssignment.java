@@ -5,10 +5,11 @@ public class HomeworkAssignment {
 	private int totalMarks;
 	private int possibleMarks;
 	private String submitterName;
-	private String letterGrade;
 	
 	
-	
+	public HomeworkAssignment(int possibleMarks) {
+		this.possibleMarks = possibleMarks;
+	}
 	
 	
 	public int getTotalMarks() {
@@ -26,12 +27,21 @@ public class HomeworkAssignment {
 	public int getPossibleMarks() {
 		return possibleMarks;
 	}
+	
+	//letterGrade is derived so use calculation here
 	public String getLetterGrade() {
-		return letterGrade;
+		if ((((double) totalMarks / possibleMarks) * 100) >= 90) {
+			return "A";
+		} else if ((((double) totalMarks / possibleMarks) * 100) >= 80) {
+			return "B";
+		} else if ((((double) totalMarks / possibleMarks) * 100) >= 70) {
+			return "C";	
+		} else if ((((double) totalMarks / possibleMarks) * 100) >= 60) {
+			return "D";		
+		} else {
+			return "F";
+		}
 	}
-	
-	
-	
 	
 	
 }
