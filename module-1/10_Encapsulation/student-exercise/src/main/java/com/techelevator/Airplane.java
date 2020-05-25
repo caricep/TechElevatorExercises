@@ -54,16 +54,10 @@ public class Airplane {
 	}
 	
 	public int getAvailableFirstClassSeats() {
-		if (totalFirstClassSeats - bookedFirstClassSeats > 0) {
 		return totalFirstClassSeats - bookedFirstClassSeats;
-		}
-	 return 0;
 	}
 	
 	public int getAvailableCoachSeats() {
-		if (totalCoachSeats - bookedCoachSeats > 0) {
 		return totalCoachSeats - bookedCoachSeats;
-		}
-	 return 0;
 	}
 }
