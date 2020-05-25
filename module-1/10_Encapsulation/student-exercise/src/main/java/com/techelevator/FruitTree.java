@@ -8,12 +8,16 @@ public class FruitTree {
 	
 	public FruitTree(String typeOfFruit, int startingPiecesOfFruit) {
 		this.typeOfFruit = typeOfFruit;
+		this.piecesOfFruitLeft = startingPiecesOfFruit - piecesOfFruitLeft;
 	}
 	
 	
 	public boolean pickFruit(int numberOfPiecesToRemove) {
-		
-		return true;
+		if (numberOfPiecesToRemove <= piecesOfFruitLeft) {
+			piecesOfFruitLeft = piecesOfFruitLeft - numberOfPiecesToRemove;
+			return true;
+		}
+		return false;
 	}
 	
 	
