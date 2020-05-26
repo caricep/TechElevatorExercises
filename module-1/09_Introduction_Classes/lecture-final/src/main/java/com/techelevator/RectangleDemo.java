@@ -17,6 +17,7 @@ public class RectangleDemo {
 		
 		wall.setWidth( 219 );
 		
+		wall2.setWidth(33333);
 
 		int wallWidth = wall.getWidth();
 		int wall2Height = wall2.getHeight();
