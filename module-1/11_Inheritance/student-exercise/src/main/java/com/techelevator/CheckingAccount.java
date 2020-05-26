@@ -14,12 +14,15 @@ public class CheckingAccount extends BankAccount {
 	
 	@Override
 	public int withdraw(int amountToWithdraw) {
-		if (super.getBalance() >= amountToWithdraw) {
+		if (amountToWithdraw <= super.getBalance()) {
 			super.withdraw(amountToWithdraw);
+			
+		} else if (super.getBalance() <= -100) {
+			super.withdraw(0);
+			
 		} else if (super.getBalance() < 0) {
 			super.withdraw(amountToWithdraw + 10);
-		} else if (super.getBalance() >= -100) {
-			super.withdraw(amountToWithdraw);
+			
 		}
 		return super.getBalance();
 		
