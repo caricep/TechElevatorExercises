@@ -1,6 +1,6 @@
 package com.techelevator;
 
-public class CheckingAccount extends BankAccount {
+public class CheckingAccount extends BankAccount implements Accountable {
 
     public CheckingAccount(String accountHolder, String accountNumber, int balance) {
         super(accountHolder, accountNumber, balance);
@@ -10,6 +10,7 @@ public class CheckingAccount extends BankAccount {
         super(accountHolder, accountNumber);
     }
 
+    
     @Override
     public int withdraw(int amountToWithdraw) {
         // Only allow the withdraw if the balance isn't going to go below -$100
