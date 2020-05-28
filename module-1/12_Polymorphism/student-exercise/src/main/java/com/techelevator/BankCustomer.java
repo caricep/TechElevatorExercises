@@ -24,9 +24,9 @@ public class BankCustomer {
 	}
 	
 	public boolean isVip() {
-		if (balance >= 25000) {
+		if (balance >= 25000 || balance - debt >= 25000 ) {
 			return true;
-		}
+		} 
 		return false;
 	}
 	
@@ -47,9 +47,6 @@ public class BankCustomer {
 	public String getPhoneNumber() {
 		return phoneNumber;
 	}
-
-
-	
 
 
 	public void setName(String name) {
