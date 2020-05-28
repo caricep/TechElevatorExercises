@@ -18,16 +18,16 @@ public class BankCustomer {
 		accountsList.add(newAccount);		
 	}
 	
+	public Accountable[] getAccounts() {
+		Accountable[] accounts = accountsList.toArray(new Accountable[accountsList.size()]);
+		return accounts;
+	}
+	
 	public boolean isVip() {
 		if (balance >= 25000) {
 			return true;
 		}
 		return false;
-	}
-	
-	public Accountable[] getAccounts() {
-		Accountable[] accounts = accountsList.toArray(new Accountable[accountsList.size()]);
-		return accounts;
 	}
 	
 	public int getBalance() {
