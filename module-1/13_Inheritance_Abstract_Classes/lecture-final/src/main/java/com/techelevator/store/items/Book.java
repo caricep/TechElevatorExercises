@@ -2,16 +2,15 @@ package com.techelevator.store.items;
 
 import com.techelevator.store.items.interfaces.Sellable;
 
-public class Book implements Sellable {
+public class Book extends Item implements Sellable {
 
 	private String genre;
 	private int pageCount;
-	private String name;
 	private double price;
 	
-	public Book(double price, String name, String genre, int pageCount) {
+	public Book(double price, String name, String genre, int pageCount, int weight) {
+		super(5, weight, name);
 		this.price = price;
-		this.name = name;
 		this.genre = genre;
 		this.pageCount = pageCount;
 	}
@@ -28,19 +27,25 @@ public class Book implements Sellable {
 		return price;
 	}
 	
-	@Override
-	public String getName() {
-		return name;
-	}
+
 	
 	@Override
 	public boolean isOnSale() {
 		return false;
 	}
-	
+
 	@Override
-	public double getShippingCost() {
-		return 5;
+	public boolean isDigital() {
+		// TODO Auto-generated method stub
+		return false;
 	}
+
+	@Override
+	public String getDescription() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+
 	
 }

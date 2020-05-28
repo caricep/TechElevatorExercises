@@ -6,4 +6,9 @@ public class Dog extends FarmAnimal {
 		super("Dog", "Bark!");
 	}
 
+	@Override
+	public String eat() {
+		return "crunch";
+	}
+
 }
