@@ -9,13 +9,14 @@ public class BankCustomer {
 	private String address;
 	private String phoneNumber;
 	private int balance;
+	private int debt;
 	
 	private Accountable[] accounts;
 	List<Accountable> accountsList = new ArrayList<Accountable> ();
 	
 	public void addAccount(Accountable newAccount) {
 		accountsList.add(newAccount);
-		
+		//Accountable[] = new Accountable[] (newAccount);
 	}
 	
 	public boolean isVip() {
@@ -24,6 +25,10 @@ public class BankCustomer {
 		}
 		return false;
 	}
+	
+	public int getBalance() {
+        return balance;
+    }
 	
 	public String getName() {
 		return name;
@@ -59,8 +64,5 @@ public class BankCustomer {
 		this.phoneNumber = phoneNumber;
 	}
 
-	 public int getBalance() {
-	        return balance;
-	    }
 
 }
