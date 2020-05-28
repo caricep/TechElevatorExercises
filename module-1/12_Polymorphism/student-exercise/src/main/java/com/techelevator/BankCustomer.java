@@ -11,12 +11,11 @@ public class BankCustomer {
 	private int balance;
 	private int debt;
 	
-	private Accountable[] accounts;
-	List<Accountable> accountsList = new ArrayList<Accountable> ();
+	private List<Accountable> accountsList = new ArrayList<>();
+	
 	
 	public void addAccount(Accountable newAccount) {
-		accountsList.add(newAccount);
-		//Accountable[] = new Accountable[] (newAccount);
+		accountsList.add(newAccount);		
 	}
 	
 	public boolean isVip() {
@@ -24,6 +23,11 @@ public class BankCustomer {
 			return true;
 		}
 		return false;
+	}
+	
+	public Accountable[] getAccounts() {
+		Accountable[] accounts = accountsList.toArray(new Accountable[accountsList.size()]);
+		return accounts;
 	}
 	
 	public int getBalance() {
@@ -45,9 +49,7 @@ public class BankCustomer {
 	}
 
 
-	public Accountable[] getAccounts() {
-		return accounts;
-	}
+	
 
 
 	public void setName(String name) {
