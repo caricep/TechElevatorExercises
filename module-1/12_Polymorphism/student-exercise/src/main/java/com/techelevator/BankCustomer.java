@@ -3,11 +3,12 @@ package com.techelevator;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BankCustomer implements Accountable {
+public class BankCustomer {
 
 	private String name;
 	private String address;
 	private String phoneNumber;
+	private int balance;
 	
 	private Accountable[] accounts;
 	List<Accountable> accountsList = new ArrayList<Accountable> ();
@@ -18,7 +19,7 @@ public class BankCustomer implements Accountable {
 	}
 	
 	public boolean isVip() {
-		if (getBalance() >= 25000) {
+		if (balance >= 25000) {
 			return true;
 		}
 		return false;
@@ -58,18 +59,8 @@ public class BankCustomer implements Accountable {
 		this.phoneNumber = phoneNumber;
 	}
 
+	 public int getBalance() {
+	        return balance;
+	    }
 
-	@Override
-	public int getBalance() {
-		return 0;
-	}
-
-	@Override
-	public int getTransferAmount() {
-		return 0;
-	}
-
-	
-	
-	
 }
