@@ -11,4 +11,18 @@ public class AnimalGroupNameTest {
 		animalGroupName = new AnimalGroupName();
 	}
 	
+	/*
+	 * 
+	*/
+	
+	@Test
+	public void animal_included_in_map() {
+		//Arrange
+		
+		//Act
+		
+		//Assert
+		
+	}
+	
 }
