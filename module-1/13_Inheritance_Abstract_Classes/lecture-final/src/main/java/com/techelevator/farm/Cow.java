@@ -11,4 +11,9 @@ public class Cow extends FarmAnimal implements Sellable {
 		return 1000;
 	}
 
+	@Override
+	public String eat() {
+		return "chew";
+	}
+
 }

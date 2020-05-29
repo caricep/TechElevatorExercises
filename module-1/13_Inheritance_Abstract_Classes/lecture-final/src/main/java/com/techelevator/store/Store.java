@@ -16,14 +16,12 @@ public class Store {
 		
 		List<Sellable> shoppingCart = new ArrayList<Sellable>();
 		
-		Sellable book = new Book(9, "Harry Potter", "YA Fanasty", 700);
+		Sellable book = new Book(9, "Harry Potter", "YA Fanasty", 700, 5);
 		shoppingCart.add(book);
 		
 		Bread bread = new Bread("Wheat");
 		bread.setPrice(1.89);
-		bread.setShippingCost(2);
 		bread.setOnSale(true);
-		
 		shoppingCart.add(bread);
 		
 		shoppingCart.add(new Hellicopter());
@@ -32,7 +30,7 @@ public class Store {
 		
 		shoppingCart.add( new NewKidsOnTheBlockCd("Hangin Tough", 11));
 		
-		shoppingCart.add(new Book(59.99, "Java for Dummies", "Programming", 200));
+		shoppingCart.add(new Book(59.99, "Java for Dummies", "Programming", 200, 2));
 		
 		
 		System.out.println("Your cart contains...");

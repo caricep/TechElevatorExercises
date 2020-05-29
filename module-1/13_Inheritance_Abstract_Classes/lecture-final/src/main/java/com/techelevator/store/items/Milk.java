@@ -2,13 +2,14 @@ package com.techelevator.store.items;
 
 import com.techelevator.store.items.interfaces.Sellable;
 
-public class Milk implements Sellable {
+public class Milk extends Item implements Sellable {
 
 	private boolean isExpired = false;
 	private double price;
 	private double shippingCost;
 	
 	public Milk(double price, double shippingCost) {
+		super(1, 2, "Milk");
 		this.price = price;
 		this.shippingCost = shippingCost;
 	}
@@ -26,10 +27,6 @@ public class Milk implements Sellable {
 		return price;
 	}
 
-	@Override
-	public String getName() {
-		return "Milk";
-	}
 
 	@Override
 	public boolean isOnSale() {
@@ -38,9 +35,25 @@ public class Milk implements Sellable {
 
 	@Override
 	public double getShippingCost() {
-
-		return shippingCost;
+		if (isExpired) {
+			return getBaseShippingCost();
+		} else {
+			return super.getShippingCost();
+		}
 	}
+
+	@Override
+	public boolean isDigital() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public String getDescription() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	
 	
 }

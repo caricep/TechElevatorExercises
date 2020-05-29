@@ -2,15 +2,15 @@ package com.techelevator.store.items;
 
 import com.techelevator.store.items.interfaces.Sellable;
 
-public class Bread implements Sellable {
+public class Bread extends Item implements Sellable {
 
 	private String type;
 
 	private double price;
 	private boolean isOnSale;
-	private double shippingCost;
 
 	public Bread(String type) {
+		super(.5, 1, type + " Bread");
 		this.type = type;
 	}
 	
@@ -19,20 +19,13 @@ public class Bread implements Sellable {
 		return price;
 	}
 
-	@Override
-	public String getName() {
-		return type + " Bread";
-	}
+
 
 	@Override
 	public boolean isOnSale() {
 		return isOnSale;
 	}
 
-	@Override
-	public double getShippingCost() {
-		return shippingCost;
-	}
 
 	public void setPrice(double price) {
 		this.price = price;
@@ -42,10 +35,19 @@ public class Bread implements Sellable {
 		this.isOnSale = isOnSale;
 	}
 
-	public void setShippingCost(double shippingCost) {
-		this.shippingCost = shippingCost;
+	@Override
+	public boolean isDigital() {
+		// TODO Auto-generated method stub
+		return false;
 	}
-	
+
+	@Override
+	public String getDescription() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
 	
 	
 	

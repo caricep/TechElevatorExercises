@@ -2,13 +2,14 @@ package com.techelevator.store.items;
 
 import com.techelevator.store.items.interfaces.Sellable;
 
-public class NewKidsOnTheBlockCd implements Sellable {
+public class NewKidsOnTheBlockCd extends Item implements Sellable {
 
 	private String albumTitle;
 	private boolean isVeryCool = true;
 	private int trackCount;
 	
 	public NewKidsOnTheBlockCd(String albumTitle, int trackCount) {
+		super(2.0, 1, albumTitle);
 		this.albumTitle = albumTitle;
 		this.trackCount = trackCount;
 	}
@@ -26,17 +27,25 @@ public class NewKidsOnTheBlockCd implements Sellable {
 	@Override
 	public String getName() {
 		// TODO Auto-generated method stub
-		return albumTitle;
+		return albumTitle + (isVeryCool ? "Is Cool!" : "Is No longer Cooler");
 	}
 	
 	@Override
 	public boolean isOnSale() {
 		return isVeryCool;
 	}
+
 	@Override
-	public double getShippingCost() {
-	
-		return 1.5 * trackCount;
+	public boolean isDigital() {
+		// TODO Auto-generated method stub
+		return false;
 	}
+
+	@Override
+	public String getDescription() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	
 }
