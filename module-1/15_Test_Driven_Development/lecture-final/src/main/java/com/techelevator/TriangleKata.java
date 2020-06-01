@@ -2,23 +2,28 @@ package com.techelevator;
 
 public class TriangleKata {
 
+	private final static String TYPE_INVALID = "invalid";
+	private final static String TYPE_ISOSCELES = "isosceles";
+	private final static String TYPE_EQUILATERAL = "equilateral";
+	private final static String TYPE_SCALENE = "scalene";
+	
 	public String classify(int side1, int side2, int side3) {
 		
 		
 		if (!isValidTriangle(side1, side2, side3)) {
-			return "invalid";
+			return TYPE_INVALID;
 		}
 	
 		if (isIsosceles(side1, side2, side3)) {
-			return "isosceles";
+			return TYPE_ISOSCELES;
 		}
 		
 		if( isEquilateral(side1, side2, side3) ) {
-			return "equilateral";
+			return TYPE_EQUILATERAL;
 		}
 		
 		
-		return "scalene";
+		return TYPE_SCALENE;
 	}
 	
 	
