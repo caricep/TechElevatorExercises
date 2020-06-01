@@ -32,11 +32,22 @@ public class CigarPartyTest {
 	
 	
 	@Test
-	public void number_of_cigars_for_successful_party_on_a_weekday() {
+	public void successful_party_on_a_weekday() {
 		//Arrange
-		
 		//Act
+		boolean partySuccessful = cigarParty.haveParty(45, true);
 		//Assert
+		Assert.assertTrue(partySuccessful);
 	}
+	
+	@Test
+	public void not_a_successful_party_on_a_weekday() {
+		//Arrange
+		//Act
+		boolean partySuccessful = cigarParty.haveParty(70, false);
+		//Assert
+		Assert.assertFalse(partySuccessful);
+	}
+	
 	
 }
