@@ -37,7 +37,12 @@ public class TriangleKataTest {
 	@Test
 	public void all_sides_must_be_greater_than_0() {
 		Assert.assertEquals("invalid", triangleKata.classify(0, 0, 0));
-		
 	}
+	
+	@Test
+	public void identify_isosceles_when_side_1_and_2_equal() {
+		Assert.assertEquals("isosceles", triangleKata.classify(10, 10, 1));
+	}
+
 	
 }
