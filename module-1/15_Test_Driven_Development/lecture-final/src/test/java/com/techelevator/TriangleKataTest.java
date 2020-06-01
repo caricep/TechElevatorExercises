@@ -18,7 +18,7 @@ public class TriangleKataTest {
 	
 	@Test
 	public void identifies_invalid_triangle_with_positive_sides() {
-		Assert.assertEquals("invalid", triangleKata.classify(6, 6, 11));
+		Assert.assertEquals("invalid", triangleKata.classify(6, 6, 13));
 	}
 	
 }
