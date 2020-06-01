@@ -34,4 +34,10 @@ public class TriangleKataTest {
 		Assert.assertEquals("invalid", triangleKata.classify(6, 12, 6));
 	}
 	
+	@Test
+	public void all_sides_must_be_greater_than_0() {
+		Assert.assertEquals("invalid", triangleKata.classify(0, 0, 0));
+		
+	}
+	
 }
