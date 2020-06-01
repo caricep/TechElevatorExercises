@@ -54,5 +54,9 @@ public class TriangleKataTest {
 		Assert.assertEquals("isosceles", triangleKata.classify(1, 10, 10));
 	}
 
+	@Test
+	public void identify_scalene() {
+		Assert.assertEquals("scalene", triangleKata.classify(2, 3, 4));
+	}
 	
 }
