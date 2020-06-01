@@ -11,4 +11,9 @@ public class TriangleKataTest {
 		triangleKata = new TriangleKata();
 	}
 	
+	@Test
+	public void identify_equilateral_triange() {
+		Assert.assertEquals("equilateral", triangleKata.classify(4, 4, 4));
+	}
+	
 }
