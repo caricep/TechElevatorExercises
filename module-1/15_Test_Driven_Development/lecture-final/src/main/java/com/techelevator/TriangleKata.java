@@ -13,6 +13,10 @@ public class TriangleKata {
 		if (side1 == side2 && side1 != side3) {
 			return "isosceles";
 		}
+		
+		if (side1 == side3 && side1 != side2) {
+			return "isosceles";
+		}
 	
 		
 		
