@@ -48,6 +48,11 @@ public class TriangleKataTest {
 	public void identify_isosceles_when_side_1_and_3_equal() {
 		Assert.assertEquals("isosceles", triangleKata.classify(10, 1, 10));
 	}
+	
+	@Test
+	public void identify_isosceles_when_side_2_and_3_equal() {
+		Assert.assertEquals("isosceles", triangleKata.classify(1, 10, 10));
+	}
 
 	
 }
