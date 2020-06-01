@@ -22,10 +22,10 @@ public class CigarPartyTest {
 	}
 	
 	@Test
-	public void is_the_weekend_and_successful_party_60_cigars() {
+	public void is_the_weekend_and_successful_party_100_cigars() {
 		//Arrange
 		//Act
-		boolean partySuccessful = cigarParty.haveParty(60, true);
+		boolean partySuccessful = cigarParty.haveParty(100, true);
 		//Assert
 		Assert.assertTrue(partySuccessful);
 	}	
@@ -41,16 +41,25 @@ public class CigarPartyTest {
 	
 	
 	@Test
-	public void successful_party_on_a_weekday() {
+	public void successful_party_on_a_weekday_40_or_more_cigars() {
 		//Arrange
 		//Act
-		boolean partySuccessful = cigarParty.haveParty(45, true);
+		boolean partySuccessful = cigarParty.haveParty(45, false);
 		//Assert
 		Assert.assertTrue(partySuccessful);
 	}
 	
 	@Test
-	public void not_a_successful_party_on_a_weekday() {
+	public void not_a_successful_party_on_a_weekday_less_than_40_cigars() {
+		//Arrange
+		//Act
+		boolean partySuccessful = cigarParty.haveParty(20, false);
+		//Assert
+		Assert.assertFalse(partySuccessful);
+	}
+	
+	@Test
+	public void not_a_successful_party_on_a_weekday_exceeds_60_cigars() {
 		//Arrange
 		//Act
 		boolean partySuccessful = cigarParty.haveParty(70, false);
@@ -58,5 +67,13 @@ public class CigarPartyTest {
 		Assert.assertFalse(partySuccessful);
 	}
 	
+	@Test
+	public void successful_party_60_cigars_on_a_weekday() {
+		//Arrange
+		//Act
+		boolean partySuccessful = cigarParty.haveParty(60, false);
+		//Assert
+		Assert.assertTrue(partySuccessful);
+	}	
 	
 }
