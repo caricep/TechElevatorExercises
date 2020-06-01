@@ -1,6 +1,7 @@
 package com.techelevator;
 
 import org.junit.Before;
+import org.junit.Test;
 
 public class DateFashionTest {
 
@@ -10,5 +11,9 @@ public class DateFashionTest {
 	public void setup() {
 		dateFashion = new DateFashion();
 	}	
+	
+	
+	
+	
 	
 }
