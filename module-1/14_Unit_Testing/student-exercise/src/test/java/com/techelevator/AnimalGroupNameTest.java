@@ -165,7 +165,7 @@ public class AnimalGroupNameTest {
 		animalGroup.put("crocodile", "Float");
 		
 		//Assert
-		Assert.assertEquals("Crash", animalGroupName.getHerd("LION"));
+		Assert.assertEquals("Pride", animalGroupName.getHerd("LION"));
 		Assert.assertEquals("Tower", animalGroupName.getHerd("Giraffe"));
 		Assert.assertEquals("Herd", animalGroupName.getHerd("elePHANT"));
 	}	
