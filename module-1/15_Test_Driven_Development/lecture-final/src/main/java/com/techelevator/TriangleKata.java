@@ -1,5 +1,12 @@
 package com.techelevator;
 
+/**
+ * Implementation of the classic triangle classification kata
+ * 
+ * @author Java Blue Cohort 11
+ * @version 1.0
+ *
+ */
 public class TriangleKata {
 
 	private final static String TYPE_INVALID = "invalid";
@@ -7,8 +14,16 @@ public class TriangleKata {
 	private final static String TYPE_EQUILATERAL = "equilateral";
 	private final static String TYPE_SCALENE = "scalene";
 	
+	
+	/**
+	 * Classifies triangles as isosceles, equilateral, scalene or invalid.
+	 * 
+	 * @param side1 - first side of the triangle
+	 * @param side2 - second side of the triangle
+	 * @param side3 - third side of the triangle
+	 * @return - String containing the triangle classification
+	 */
 	public String classify(int side1, int side2, int side3) {
-		
 		
 		if (!isValidTriangle(side1, side2, side3)) {
 			return TYPE_INVALID;
@@ -21,9 +36,9 @@ public class TriangleKata {
 		if( isEquilateral(side1, side2, side3) ) {
 			return TYPE_EQUILATERAL;
 		}
-		
-		
+	
 		return TYPE_SCALENE;
+		
 	}
 	
 	
