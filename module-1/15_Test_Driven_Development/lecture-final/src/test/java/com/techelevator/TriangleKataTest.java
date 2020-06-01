@@ -28,4 +28,10 @@ public class TriangleKataTest {
 		Assert.assertEquals("invalid", triangleKata.classify(12, 6, 6));
 	}
 	
+	@Test
+	public void identifies_invalid_triangle_with_1_and_3_lessThan_2() {
+		Assert.assertEquals("invalid", triangleKata.classify(6, 13, 6));
+		Assert.assertEquals("invalid", triangleKata.classify(6, 12, 6));
+	}
+	
 }
