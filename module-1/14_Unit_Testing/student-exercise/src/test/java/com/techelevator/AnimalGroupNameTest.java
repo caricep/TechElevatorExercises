@@ -139,6 +139,7 @@ public class AnimalGroupNameTest {
 		animalGroup.put("deer", "Herd");
 		animalGroup.put("dog", "Pack");
 		animalGroup.put("crocodile", "Float");			
+		
 		//Updates lion's animal group name to "Pride" instead of "Herd"
 		animalGroup.put("lion", "Pride");
 		
