@@ -1,7 +1,6 @@
 package com.techelevator;
 
 import org.junit.*;
-import static org.junit.Assert.*;
 
 public class KataFizzBuzzTest {
 
@@ -52,6 +51,14 @@ public class KataFizzBuzzTest {
 		String result = kataFizzBuzz.fizzBuzz(0);
 		
 		Assert.assertEquals("", result);
+	}
+	
+	@Test
+	public void result_is_fizz_when_number_contains_3() {
+		String result = kataFizzBuzz.fizzBuzz(3);
+		String containsThree = result.toString();
+		
+		Assert.assertEquals("Fizz", containsThree);
 	}
 	
 }
