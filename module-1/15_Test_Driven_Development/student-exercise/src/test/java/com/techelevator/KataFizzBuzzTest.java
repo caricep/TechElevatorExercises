@@ -20,14 +20,14 @@ public class KataFizzBuzzTest {
 	}
 	
 	@Test
-	public void result_is_fizz_when_number_is_3() {
+	public void result_is_fizz_when_number_is_divisible_by_3() {
 		String result = kataFizzBuzz.fizzBuzz(3);
 		
 		Assert.assertEquals("Fizz", result);
 	}
 	
 	@Test
-	public void result_is_buzz_when_number_is_5() {
+	public void result_is_buzz_when_number_is_divisible_by_5() {
 		String result = kataFizzBuzz.fizzBuzz(5);
 		
 		Assert.assertEquals("Buzz", result);
