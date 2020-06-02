@@ -33,6 +33,12 @@ public class KataFizzBuzzTest {
 		Assert.assertEquals("Buzz", result);
 	}
 	
+	@Test
+	public void result_is_fizzbuzz_when_number_is_divisible_by_3_and_5() {
+		String result = kataFizzBuzz.fizzBuzz(15);
+		
+		Assert.assertEquals("FizzBuzz", result);
+	}
 	
 	
 }
