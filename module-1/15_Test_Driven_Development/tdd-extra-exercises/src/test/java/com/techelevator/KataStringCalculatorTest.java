@@ -19,6 +19,13 @@ public class KataStringCalculatorTest {
 		Assert.assertEquals(0, result);
 	}
 	
+	@Test
+	public void return_1_if_1_is_provided() {
+		int result = kataStringCalculator.add("1");
+		
+		Assert.assertEquals(1, result);
+	}
+	
 	
 	
 }
