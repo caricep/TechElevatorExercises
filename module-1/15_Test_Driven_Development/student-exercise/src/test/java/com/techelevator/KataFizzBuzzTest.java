@@ -56,21 +56,12 @@ public class KataFizzBuzzTest {
 	@Test
 	public void result_is_fizz_when_number_contains_3() {
 		String result = kataFizzBuzz.fizzBuzz(3);
-		String containsThree = result.toString();
-		if (containsThree.contains("3")) {
-			containsThree.equals(containsThree);
-		}
-		
 		String result13 = kataFizzBuzz.fizzBuzz(13);
-		String thirteenContainsThree = result13.toString();
-		if (thirteenContainsThree.contains("3")) {
-			thirteenContainsThree.equals(thirteenContainsThree);
-		}
+
 		
-		Assert.assertEquals("Fizz", containsThree);
-		Assert.assertEquals("Fizz", thirteenContainsThree);
+		Assert.assertEquals("Fizz", result);
+		Assert.assertEquals("Fizz", result13);
 	}
-	
 	
 	
 }
