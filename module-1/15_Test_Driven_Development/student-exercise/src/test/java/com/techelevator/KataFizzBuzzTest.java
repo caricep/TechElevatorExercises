@@ -47,4 +47,11 @@ public class KataFizzBuzzTest {
 		Assert.assertEquals("22", result);
 	}
 	
+	@Test
+	public void result_is_empty_string_when_number_is_0() {
+		String result = kataFizzBuzz.fizzBuzz(0);
+		
+		Assert.assertEquals("", result);
+	}
+	
 }
