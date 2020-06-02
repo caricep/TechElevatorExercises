@@ -12,4 +12,11 @@ public class KataStringCalculatorTest {
 		kataStringCalculator = new KataStringCalculator();
 	}
 	
+	@Test
+	public void return_0_if_empty_string_provided() {
+		int result = kataStringCalculator.add("");
+		
+		Assert.assertEquals(0, result);
+	}
+	
 }
