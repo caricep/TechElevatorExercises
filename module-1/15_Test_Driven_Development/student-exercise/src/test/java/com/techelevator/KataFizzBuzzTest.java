@@ -12,5 +12,11 @@ public class KataFizzBuzzTest {
 		kataFizzBuzz = new KataFizzBuzz();
 	}
 	
+	@Test
+	public void result_is_1_when_number_is_1() {
+		String result = kataFizzBuzz.fizzBuzz(1);
+		
+		Assert.assertEquals("1", result);
+	}
 	
 }
