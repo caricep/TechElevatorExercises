@@ -40,5 +40,11 @@ public class KataFizzBuzzTest {
 		Assert.assertEquals("FizzBuzz", result);
 	}
 	
+	@Test
+	public void result_is_22_when_number_is_22() {
+		String result = kataFizzBuzz.fizzBuzz(22);
+		
+		Assert.assertEquals("22", result);
+	}
 	
 }
