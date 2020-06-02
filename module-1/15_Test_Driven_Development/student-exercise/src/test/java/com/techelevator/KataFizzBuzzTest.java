@@ -19,4 +19,11 @@ public class KataFizzBuzzTest {
 		Assert.assertEquals("1", result);
 	}
 	
+	@Test
+	public void result_is_fizz_when_number_is_3() {
+		String result = kataFizzBuzz.fizzBuzz(3);
+		
+		Assert.assertEquals("Fizz", result);
+	}
+	
 }
