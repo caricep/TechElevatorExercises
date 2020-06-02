@@ -58,7 +58,11 @@ public class KataFizzBuzzTest {
 		String result = kataFizzBuzz.fizzBuzz(3);
 		String containsThree = result.toString();
 		
+		String result13 = kataFizzBuzz.fizzBuzz(13);
+		String ThirteenContainsThree = result13.toString();
+		
 		Assert.assertEquals("Fizz", containsThree);
+		Assert.assertEquals("Fizz", ThirteenContainsThree);
 	}
 	
 }
