@@ -4,7 +4,7 @@ public class KataFizzBuzz {
 
 	public String fizzBuzz(int number) {
 		
-		
+		String numberString = Integer.toString(number);
 		
 		if (number < 1) {
 			return "";
@@ -14,7 +14,7 @@ public class KataFizzBuzz {
 			return "FizzBuzz";
 		}
 		
-		if (number % 3 == 0) {
+		if (number % 3 == 0 || numberString.contains("3")) {
 			return "Fizz";
 		}
 		
