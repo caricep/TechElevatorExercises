@@ -26,6 +26,11 @@ public class KataStringCalculatorTest {
 		Assert.assertEquals(1, result);
 	}
 	
-	
+	@Test
+	public void return_sum_if_two_numbers_are_provided() {
+		int result = kataStringCalculator.add("1,2");
+		
+		Assert.assertEquals(3, result);
+	}
 	
 }
