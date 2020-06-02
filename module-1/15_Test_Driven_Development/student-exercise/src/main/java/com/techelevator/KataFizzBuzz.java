@@ -10,7 +10,8 @@ public class KataFizzBuzz {
 			return "";
 		}
 		
-		if (number % 3 == 0 && number % 5 == 0) {
+		if (number % 3 == 0 && number % 5 == 0 ||
+				numberString.contains("3") && numberString.contains("5")) {
 			return "FizzBuzz";
 		}
 		
