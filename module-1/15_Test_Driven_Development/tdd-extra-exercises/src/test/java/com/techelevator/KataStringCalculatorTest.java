@@ -19,4 +19,6 @@ public class KataStringCalculatorTest {
 		Assert.assertEquals(0, result);
 	}
 	
+	
+	
 }
