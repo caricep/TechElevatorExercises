@@ -63,5 +63,14 @@ public class KataFizzBuzzTest {
 		Assert.assertEquals("Fizz", result13);
 	}
 	
+	@Test
+	public void result_is_buzz_when_number_contains_5() {
+		String result = kataFizzBuzz.fizzBuzz(5);
+		String result51 = kataFizzBuzz.fizzBuzz(51);
+
+		
+		Assert.assertEquals("Buzz", result);
+		Assert.assertEquals("Buzz", result51);
+	}
 	
 }
