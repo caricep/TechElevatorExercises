@@ -4,6 +4,10 @@ public class KataFizzBuzz {
 
 	public String fizzBuzz(int number) {
 		
+		if (number < 1) {
+			return "";
+		}
+		
 		if (number % 3 == 0 && number % 5 == 0) {
 			return "FizzBuzz";
 		}
@@ -19,6 +23,8 @@ public class KataFizzBuzz {
 		if (number >= 1 || number <= 100) {
 			return "" + number + "";
 		}
+		
+		
 		return null;
 	}
 	
