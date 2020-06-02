@@ -22,7 +22,6 @@ public class KataFizzBuzz {
 			return "Fizz";
 		}
 		
-		
 		if (number >= 1 || number <= 100) {
 			return "" + number + "";
 		}
