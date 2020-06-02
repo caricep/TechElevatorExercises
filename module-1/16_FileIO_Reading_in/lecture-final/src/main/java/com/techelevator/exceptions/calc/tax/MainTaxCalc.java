@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.techelevator.exceptions.calc.Calculator;
 import com.techelevator.exceptions.calc.Menu;
+import com.techelevator.exceptions.calc.exception.InvalidStringException;
 
 public class MainTaxCalc {
 
@@ -15,10 +16,18 @@ public class MainTaxCalc {
 			
 			List<String> values = menu.getValuesFromUser();
 
-			List<String> results = salesTax.calculate(values);	
-		
-			for (String result : results) {
-				menu.displayUserMessage(result);
+			try {
+				List<String> results = salesTax.calculate(values);	
+			
+				for (String result : results) {
+					menu.displayUserMessage(result);
+				}
+			} catch (NumberFormatException e) {
+				menu.displayUserMessage("Invalid character entered");
+			} catch (NullPointerException e) {
+				menu.displayUserMessage("List did not exist");
+			} catch (InvalidStringException e) {
+				menu.displayUserMessage("This should never happen!");
 			}
 	
 	}
