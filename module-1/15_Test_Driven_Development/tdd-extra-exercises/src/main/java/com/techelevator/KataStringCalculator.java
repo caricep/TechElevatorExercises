@@ -7,6 +7,11 @@ public class KataStringCalculator {
 		if (numbers == "1") {
 			return 1;
 		}
+		
+		if (numbers == "1,2") {
+			
+		}
+		
 		return 0;
 		
 	}
