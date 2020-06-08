@@ -121,18 +121,18 @@ WHERE continent = 'Oceania' AND lifeexpectancy IS NULL;
 
 
 -- 20. The name, continent, GNP, and average life expectancy of all countries that have an average life expectancy of at least 70 years and a GNP between $1 million and $100 million dollars (3 rows)
-SELECT *
+SELECT name, continent, gnp, lifeexpectancy
 FROM country
 WHERE lifeexpectancy >= 70
-AND gnp BETWEEN 1000000 AND 100000000;
+AND gnp BETWEEN 1 AND 100;
 
 
 -- 21. The per capita GNP (i.e. GNP divided by population) in US Dollars of all countries in Europe (46 rows)
-SELECT name, (gnp / population) AS Per_Capita_GDP
+SELECT (gnp / population) AS Per_Capita_GDP
 FROM country
 WHERE continent = 'Europe';
 
 -- 22. The number of years since independence for all countries that have a year of independence (192 rows)
-SELECT name, (2020 - indepyear) AS Number_Of_Years_Since_Independence
+SELECT (2020 - indepyear) AS Number_Of_Years_Since_Independence
 FROM country
 WHERE indepyear IS NOT NULL;
