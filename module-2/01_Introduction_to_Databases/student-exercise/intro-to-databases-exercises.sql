@@ -48,10 +48,22 @@ WHERE gnp > 1000000;
 
 
 -- 8. The name, continent, population, GNP, and average life expectancy of all countries with an average life expectancy greater than 80 years (5 rows)
+SELECT name, continent, population, gnp, lifeexpectancy
+FROM country
+WHERE lifeexpectancy > 80;
+
 
 -- 9. The name and population of all cities in the USA with a population of greater than 1 million people (9 rows)
+SELECT name, population
+FROM city
+WHERE countrycode = 'USA' AND population > 1000000;
+
 
 -- 10. The name and population of all cities in China with a population of greater than 1 million people (35 rows)
+SELECT name, population
+FROM city
+WHERE countrycode = 'CHN' AND population > 1000000;
+
 
 -- 11. The name and region of all countries in North or South America (51 rows)
 
