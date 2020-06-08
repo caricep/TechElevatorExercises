@@ -18,14 +18,34 @@ WHERE district = 'Montana';
 
 
 -- 3. The name, form of government, and head of state of all countries in Europe (46 rows)
+SELECT name, governmentform, headofstate
+FROM country
+WHERE continent = 'Europe';
+
 
 -- 4. The name, population, surface area, and average life expectancy of all countries in Asia (51 rows)
+SELECT name, population, surfacearea, lifeexpectancy
+FROM country
+WHERE continent = 'Asia';
+
 
 -- 5. The name, country code, and population of all cities with a population greater than 8 million people (10 rows)
+SELECT name, countrycode, population
+FROM city
+WHERE population > 8000000;
+
 
 -- 6. The name, country code, and population of all cities with a population less than one thousand people (11 rows)
+SELECT name, countrycode, population
+FROM city
+WHERE population < 1000;
+
 
 -- 7. The name, continent, and GNP of all countries with a GNP greater than one trillion dollars (6 rows)
+SELECT name, continent, gnp
+FROM country
+WHERE gnp > 1000000;
+
 
 -- 8. The name, continent, population, GNP, and average life expectancy of all countries with an average life expectancy greater than 80 years (5 rows)
 
