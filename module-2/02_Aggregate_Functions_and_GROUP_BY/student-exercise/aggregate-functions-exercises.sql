@@ -34,6 +34,10 @@ ORDER BY name;
 -- world sorted from highest to lowest. Recall: GNP is express in units of one million US Dollars 
 -- (highest per capita GNP in world: 37459.26)
 
+SELECT name, round((gnp * 1000000 / population), 2) AS per_capita_gnp
+FROM country
+WHERE population != 0
+ORDER BY per_capita_gnp DESC;
 
 
 -- 4. The average life expectancy of countries in South America.
