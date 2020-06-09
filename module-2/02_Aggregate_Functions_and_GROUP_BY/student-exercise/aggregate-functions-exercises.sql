@@ -49,9 +49,17 @@ WHERE continent = 'South America';
 
 -- 5. The sum of the population of all cities in California.
 -- (total population of all cities in California: 16716706)
+SELECT SUM(population) AS total_population_of_all_cities_in_California
+FROM city
+WHERE district = 'California';
+
 
 -- 6. The sum of the population of all cities in China.
 -- (total population of all cities in China: 175953614)
+SELECT SUM(population) AS total_population_of_all_cities_in_China
+FROM city
+WHERE countrycode = 'CHN';
+
 
 -- 7. The maximum population of all countries in the world.
 -- (largest country population in world: 1277558000)
