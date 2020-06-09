@@ -1,6 +1,13 @@
 -- The name and population of all cities in the USA with a population of greater than 1 million people
+SELECT name, population 
+FROM city
+WHERE population > 1000000 AND countrycode = 'USA';
+
 
 -- The name and population of all cities in China with a population of greater than 1 million people
+SELECT name, population 
+FROM city
+WHERE population > 1000000 AND countrycode = 'CHN';
 
 -- The name and region of all countries in North or South America
   
@@ -16,6 +23,17 @@
 
 -- The name and average life expectancy of all countries in southern regions
 
--- The name and average life expectancy of all countries in southern regions for which an average life expectancy has been provided (i.e. not equal to null)
+-- The name and average life expectancy of all countries in southern regions for which an average life expectancy 
+-- has been provided (i.e. not equal to null)
+SELECT name, lifeexpectancy
+FROM country
+WHERE lifeexpectancy IS NOT NULL AND region ILIKE '%south%';
 
--- The name, continent, GNP, and average life expectancy of all countries in Africa or Asia that have an average life expectancy of at least 70 years and a GNP between $1 billion and $100 billion dollars
+
+-- The name, continent, GNP, and average life expectancy of all  in Africa or Asia that have an average 
+-- life expectancy of at least 70 years and a GNP between $1 billion (1000) and $100 billion dollars  (100000)
+SELECT * 
+FROM country
+WHERE continent IN ('Africa', 'Asia') 
+AND lifeexpectancy >= 70
+AND gnp BETWEEN 1000 AND 100000;
