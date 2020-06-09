@@ -42,6 +42,10 @@ ORDER BY per_capita_gnp DESC;
 
 -- 4. The average life expectancy of countries in South America.
 -- (average life expectancy in South America: 70.9461)
+SELECT round(AVG(lifeexpectancy):: decimal, 4) AS avg_life_expectancy
+FROM country
+WHERE continent = 'South America';
+
 
 -- 5. The sum of the population of all cities in California.
 -- (total population of all cities in California: 16716706)
