@@ -24,10 +24,17 @@ ORDER BY district, name;
 -- country code should be returned as a single column named country_and_code 
 -- and should contain values such as ‘Angola (AGO)’ 
 -- (58 rows)
+SELECT (name || ' (' || code || ')') AS country_and_code
+FROM country
+WHERE continent = 'Africa'
+ORDER BY name;
+
 
 -- 3. The per capita GNP (i.e. GNP multipled by 1000000 then divided by population) of all countries in the 
 -- world sorted from highest to lowest. Recall: GNP is express in units of one million US Dollars 
 -- (highest per capita GNP in world: 37459.26)
+
+
 
 -- 4. The average life expectancy of countries in South America.
 -- (average life expectancy in South America: 70.9461)
