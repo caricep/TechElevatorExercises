@@ -84,28 +84,63 @@ WHERE countrycode = 'AUS';
 
 -- 10. The minimum population of all countries in the world.
 -- (smallest_country_population in world: 50)
+SELECT MIN(population) AS smallest_country_population_in_world
+FROM country
+WHERE population > 0;
+
 
 -- 11. The average population of cities in the United States.
 -- (avgerage city population in USA: 286955.3795)
+SELECT round(AVG(population), 4) AS avg_city_population_in_USA
+FROM city
+WHERE countrycode = 'USA';
+
 
 -- 12. The average population of cities in China.
 -- (average city population in China: 484720.6997 approx.)
+SELECT round(AVG(population), 4) AS avg_city_population_in_China
+FROM city
+WHERE countrycode = 'CHN';
+
 
 -- 13. The surface area of each continent ordered from highest to lowest.
 -- (largest continental surface area: 31881000, "Asia")
+SELECT continent, MAX(surfacearea)
+FROM country
+GROUP BY continent, surfacearea
+ORDER BY continent, surfacearea DESC;
+
 
 -- 14. The highest population density (population divided by surface area) of all 
 -- countries in the world. 
 -- (highest population density in world: 26277.7777)
+SELECT round((population / surfacearea) :: decimal, 4) AS highest_population_density_in_the_world
+FROM country
+ORDER BY highest_population_density_in_the_world DESC
+LIMIT 1;
+
 
 -- 15. The population density and life expectancy of the top ten countries with the 
 -- highest life expectancies in descending order. 
 -- (highest life expectancies in world: 83.5, 166.6666, "Andorra")
+SELECT ((round(lifeexpectancy :: decimal, 1)) || ', ' || round((population / surfacearea) :: decimal, 4) || ', ' || ' "' || name || '"') 
+AS highest_life_expectancies_in_the_world
+FROM country
+WHERE lifeexpectancy IS NOT NULL
+ORDER BY lifeexpectancy DESC
+LIMIT 10;
+
 
 -- 16. The difference between the previous and current GNP of all the countries in 
 -- the world ordered by the absolute value of the difference. Display both 
 -- difference and absolute difference.
 -- (smallest difference: 1.00, 1.00, "Ecuador")
+SELECT (round(gnp :: decimal, 2) || ', ' || name) AS prev_and_current_gnp
+FROM country
+WHERE gnp > 0
+ORDER BY gnp;
+
+
 
 -- 17. The average population of cities in each country (hint: use city.countrycode)
 -- ordered from highest to lowest.
