@@ -128,9 +128,9 @@ AND gnp BETWEEN 1 AND 100;
 
 
 -- 21. The per capita GNP (i.e. GNP divided by population) in US Dollars of all countries in Europe (46 rows)
-SELECT name, (gnp / population) AS Per_Capita_GDP
+SELECT name, round(gnp / population, 4) AS Per_Capita_GDP
 FROM country
-WHERE continent = 'Europe';
+WHERE continent = 'Europe' AND gnp > 0;
 
 -- 22. The number of years since independence for all countries that have a year of independence (192 rows)
 SELECT name, (2020 - indepyear) AS Number_Of_Years_Since_Independence
