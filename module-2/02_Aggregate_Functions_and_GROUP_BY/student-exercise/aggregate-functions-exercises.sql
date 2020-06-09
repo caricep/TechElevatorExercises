@@ -13,7 +13,6 @@
 -- The results should be ordered alphabetically by state name and then by city 
 -- name. 
 -- (19 rows)
-
 SELECT (name || ', ' || district) AS name_and_state
 FROM city
 WHERE district IN ('Pennsylvania', 'West Virginia', 'Kentucky', 'Indiana', 'Michigan')
@@ -33,7 +32,6 @@ ORDER BY name;
 -- 3. The per capita GNP (i.e. GNP multipled by 1000000 then divided by population) of all countries in the 
 -- world sorted from highest to lowest. Recall: GNP is express in units of one million US Dollars 
 -- (highest per capita GNP in world: 37459.26)
-
 SELECT name, round((gnp * 1000000 / population), 2) AS per_capita_gnp
 FROM country
 WHERE population != 0
@@ -79,6 +77,10 @@ LIMIT 1;
 
 -- 9. The maximum population of all cities in Australia.
 -- (largest city population in Australia: 3276207)
+SELECT MAX(population) AS largest_city_population_in_Australia
+FROM city
+WHERE countrycode = 'AUS';
+
 
 -- 10. The minimum population of all countries in the world.
 -- (smallest_country_population in world: 50)
