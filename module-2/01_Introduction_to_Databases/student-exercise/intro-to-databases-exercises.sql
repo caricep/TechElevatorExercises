@@ -128,7 +128,7 @@ AND gnp BETWEEN 1 AND 100;
 
 
 -- 21. The per capita GNP (i.e. GNP divided by population) in US Dollars of all countries in Europe (46 rows)
-SELECT name, round(gnp / population, 4) AS Per_Capita_GDP
+SELECT name, round(gnp * 1000000 / population, 4) AS Per_Capita_GDP
 FROM country
 WHERE continent = 'Europe' AND gnp > 0;
 
