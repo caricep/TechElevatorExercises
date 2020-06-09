@@ -63,9 +63,19 @@ WHERE countrycode = 'CHN';
 
 -- 7. The maximum population of all countries in the world.
 -- (largest country population in world: 1277558000)
+SELECT population AS largest_country_population_in_the_world
+FROM country
+ORDER BY population DESC
+LIMIT 1;
+
 
 -- 8. The maximum population of all cities in the world.
 -- (largest city population in world: 10500000)
+SELECT population AS largest_city_population_in_the_world
+FROM city
+ORDER BY population DESC
+LIMIT 1;
+
 
 -- 9. The maximum population of all cities in Australia.
 -- (largest city population in Australia: 3276207)
