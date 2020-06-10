@@ -168,9 +168,42 @@ LIMIT 5;
 
 -- 18. The top five Action film titles by number of rentals 
 -- (#1 should have 30 rentals and #5 should have 28 rentals)
+SELECT film.title, count(*)
+FROM category
+JOIN film_category ON category.category_id = film_category.category_id
+JOIN film ON film_category.film_id = film.film_id
+JOIN inventory ON film.film_id = inventory.film_id
+JOIN rental ON inventory.inventory_id = rental.inventory_id
+WHERE category.name = 'Action'
+GROUP BY film.title
+ORDER BY count DESC
+LIMIT 5;
 
 -- 19. The top 10 actors ranked by number of rentals of films starring that actor 
 -- (#1 should be “GINA DEGENERES” with 753 rentals and #10 should be “SEAN GUINESS” with 599 rentals)
+SELECT actor.first_name || ' ' || actor.last_name AS actor, count(*)
+FROM actor
+JOIN film_actor ON actor.actor_id = film_actor.actor_id
+JOIN film ON film_actor.film_id  = film.film_id
+JOIN inventory ON film.film_id = inventory.film_id
+JOIN rental ON inventory.inventory_id = rental.inventory_id
+GROUP BY actor.actor_id, actor
+ORDER BY count DESC
+LIMIT 10;
+
 
 -- 20. The top 5 “Comedy” actors ranked by number of rentals of films in the “Comedy” category starring that actor 
 -- (#1 should have 87 rentals and #5 should have 72 rentals)
+SELECT actor.first_name || ' ' || actor.last_name AS actor, count(*)
+FROM actor
+JOIN film_actor ON actor.actor_id = film_actor.actor_id
+JOIN film ON film_actor.film_id  = film.film_id
+JOIN film_category ON film.film_id = film_category.film_id
+JOIN category ON film_category.category_id = category.category_id
+JOIN inventory ON film.film_id = inventory.film_id
+JOIN rental ON inventory.inventory_id = rental.inventory_id
+WHERE category.name = 'Comedy'
+GROUP BY actor.actor_id, actor
+ORDER BY count DESC
+LIMIT 5;
+
