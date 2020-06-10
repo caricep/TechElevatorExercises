@@ -40,7 +40,7 @@ ORDER BY per_capita_gnp DESC;
 
 -- 4. The average life expectancy of countries in South America.
 -- (average life expectancy in South America: 70.9461)
-SELECT round(AVG(lifeexpectancy):: decimal, 4) AS avg_life_expectancy
+SELECT round(AVG(lifeexpectancy):: decimal, 4) AS avg_life_expectancy_in_South_America
 FROM country
 WHERE continent = 'South America';
 
@@ -61,9 +61,9 @@ WHERE countrycode = 'CHN';
 
 -- 7. The maximum population of all countries in the world.
 -- (largest country population in world: 1277558000)
-SELECT population AS largest_country_population_in_the_world
+SELECT MAX(population) AS largest_country_population_in_the_world
 FROM country
-ORDER BY population DESC
+ORDER BY largest_country_population_in_the_world DESC
 LIMIT 1;
 
 
@@ -105,10 +105,10 @@ WHERE countrycode = 'CHN';
 
 -- 13. The surface area of each continent ordered from highest to lowest.
 -- (largest continental surface area: 31881000, "Asia")
-SELECT continent, MAX(surfacearea)
+SELECT SUM(surfacearea) AS total_surface_area, continent
 FROM country
-GROUP BY continent, surfacearea
-ORDER BY continent, surfacearea DESC;
+GROUP BY continent
+ORDER BY total_surface_area DESC;
 
 
 -- 14. The highest population density (population divided by surface area) of all 
@@ -123,7 +123,7 @@ LIMIT 1;
 -- 15. The population density and life expectancy of the top ten countries with the 
 -- highest life expectancies in descending order. 
 -- (highest life expectancies in world: 83.5, 166.6666, "Andorra")
-SELECT ((round(lifeexpectancy :: decimal, 1)) || ', ' || round((population / surfacearea) :: decimal, 4) || ', ' || ' "' || name || '"') 
+SELECT ((round(lifeexpectancy :: decimal, 1)) || ', ' || round((population / surfacearea) :: decimal, 4) || ', ' || name) 
 AS highest_life_expectancies_in_the_world
 FROM country
 WHERE lifeexpectancy IS NOT NULL
@@ -135,19 +135,25 @@ LIMIT 10;
 -- the world ordered by the absolute value of the difference. Display both 
 -- difference and absolute difference.
 -- (smallest difference: 1.00, 1.00, "Ecuador")
-SELECT (round(gnp :: decimal, 2) || ', ' || name) AS prev_and_current_gnp
+SELECT (gnp - gnpold) AS difference, ABS(gnp - gnpold) AS absolute_value_of_difference, name
 FROM country
-WHERE gnp > 0
-ORDER BY gnp;
-
+WHERE gnp - gnpold IS NOT NULL
+ORDER BY absolute_value_of_difference;
 
 
 -- 17. The average population of cities in each country (hint: use city.countrycode)
 -- ordered from highest to lowest.
 -- (highest avg population: 4017733.0000, "SGP")
+SELECT round(AVG(population), 4) AS highest_avg_population, countrycode
+FROM city
+GROUP BY countrycode
+ORDER BY highest_avg_population DESC;
+
 	
 -- 18. The count of cities in each state in the USA, ordered by state name.
 -- (45 rows)
+SELECT 
+
 	
 -- 19. The count of countries on each continent, ordered from highest to lowest.
 -- (highest count: 58, "Africa")
