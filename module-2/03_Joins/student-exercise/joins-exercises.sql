@@ -121,18 +121,12 @@ LIMIT 10;
 
 -- 14. The first and last name of the top ten customers ranked by dollars spent 
 -- (#1 should be “KARL SEAL” with 221.55 spent, #10 should be “ANA BRADLEY” with 174.66 spent)
-SELECT customer.customer_id, customer.first_name, customer.last_name, SUM(payment.amount) AS total_paid
+SELECT customer.first_name, customer.last_name, SUM(payment.amount) AS total_dollars_spent
 FROM customer
-JOIN rental ON rental.customer_id = customer.customer_id
 JOIN payment ON payment.customer_id = customer.customer_id
-GROUP BY customer.customer_id, payment.amount
-ORDER BY total_paid DESC
+GROUP BY customer.first_name, customer.last_name
+ORDER BY total_dollars_spent DESC
 LIMIT 10;
-
-SELECT customer.customer_id, customer.first_name, customer.last_name, SUM(payment.amount)
-FROM payment
-JOIN customer ON customer.customer_id = payment.customer_id
-GROUP BY customer.customer_id, payment.amount;
 
 
 -- 15. The store ID, street address, total number of rentals, total amount of sales (i.e. payments), 
@@ -150,9 +144,27 @@ GROUP BY store.store_id, address.address;
 
 -- 16. The top ten film titles by number of rentals
 -- (#1 should be “BUCKET BROTHERHOOD” with 34 rentals and #10 should have 31 rentals)
+SELECT film.title, count(*)
+FROM film
+JOIN inventory ON film.film_id = inventory.film_id
+JOIN rental ON inventory.inventory_id = rental.inventory_id
+GROUP BY film.title
+ORDER BY count DESC
+LIMIT 10;
+
 
 -- 17. The top five film categories by number of rentals 
 -- (#1 should be “Sports” with 1179 rentals and #5 should be “Family” with 1096 rentals)
+SELECT category.name, count(*)
+FROM category
+JOIN film_category ON category.category_id = film_category.category_id
+JOIN film ON film_category.film_id = film.film_id
+JOIN inventory ON film.film_id = inventory.film_id
+JOIN rental ON inventory.inventory_id = rental.inventory_id
+GROUP BY category.name
+ORDER BY count DESC
+LIMIT 5;
+
 
 -- 18. The top five Action film titles by number of rentals 
 -- (#1 should have 30 rentals and #5 should have 28 rentals)
