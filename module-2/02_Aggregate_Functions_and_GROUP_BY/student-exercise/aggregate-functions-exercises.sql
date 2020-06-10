@@ -152,19 +152,42 @@ ORDER BY highest_avg_population DESC;
 	
 -- 18. The count of cities in each state in the USA, ordered by state name.
 -- (45 rows)
-SELECT 
+SELECT district, count(city) AS number_of_cities
+FROM city
+WHERE countrycode = 'USA'
+GROUP BY district
+ORDER BY district ASC;
 
 	
 -- 19. The count of countries on each continent, ordered from highest to lowest.
 -- (highest count: 58, "Africa")
+SELECT count(name) AS number_of_countries, continent
+FROM country
+GROUP BY continent
+ORDER BY number_of_countries DESC;
+
 	
 -- 20. The count of cities in each country ordered from highest to lowest.
 -- (largest number of  cities ib a country: 363, "CHN")
+SELECT count(city) AS number_of_cities, countrycode
+FROM city
+GROUP BY countrycode
+ORDER BY number_of_cities DESC;
 	
 -- 21. The population of the largest city in each country ordered from highest to 
 -- lowest.
 -- (largest city population in world: 10500000, "IND")
+SELECT MAX(population) AS population_of_largest_city, countrycode
+FROM city
+GROUP BY countrycode
+ORDER BY population_of_largest_city DESC;
+
 
 -- 22. The average, minimum, and maximum non-null life expectancy of each continent 
 -- ordered from lowest to highest average life expectancy. 
 -- (lowest average life expectancy: 52.5719, 37.2, 76.8, "Africa")
+SELECT continent, round(AVG(lifeexpectancy) :: decimal, 4) AS avg_life_expectancy, 
+MIN(lifeexpectancy) AS min_life_expectancy, MAX(lifeexpectancy) AS max_life_expectancy
+FROM country
+WHERE lifeexpectancy IS NOT NULL
+GROUP BY continent;
