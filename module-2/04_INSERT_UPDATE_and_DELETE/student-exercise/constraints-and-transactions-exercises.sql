@@ -73,23 +73,78 @@ VALUES (1001, 2);
 -- "Euclidean PI". The film has been seized from all stores, and needs to be
 -- deleted from the film table. Delete "Euclidean PI" from the film table.
 -- (Did it succeed? Why?)
--- <YOUR ANSWER HERE>
+-- <YOUR ANSWER HERE> It did not succeed because there is a foreign key constraint. The film_id for EUCLIDEAN PI is still referenced in the table film_actor.
+SELECT * FROM film
+WHERE title = 'EUCLIDEAN PI';
+
+START TRANSACTION;
+
+DELETE
+FROM film
+WHERE title = 'EUCLIDEAN PI';
+
+COMMIT;
+ROLLBACK;
+
 
 -- 9. Delete Mathmagical from the category table.
 -- (Did it succeed? Why?)
--- <YOUR ANSWER HERE>
+-- <YOUR ANSWER HERE> It did not succeed because there is a foreign key constraint. The category_id for Mathmagical is still referenced in the table film_category.
+SELECT * FROM category WHERE name = 'Mathmagical';
+
+START TRANSACTION;
+
+DELETE
+FROM category 
+WHERE name = 'Mathmagical';
+
+COMMIT;
+ROLLBACK;
+
 
 -- 10. Delete all links to Mathmagical in the film_category tale.
 -- (Did it succeed? Why?)
--- <YOUR ANSWER HERE>
+-- <YOUR ANSWER HERE> Yes, it succeeded, because this is the only area that category_id is directly linked, and there are no constraints.
+SELECT * FROM film_category WHERE category_id = 17;
+
+START TRANSACTION;
+
+DELETE
+FROM film_category 
+WHERE category_id = 17;
+
+COMMIT;
+ROLLBACK;
+
 
 -- 11. Retry deleting Mathmagical from the category table, followed by retrying
 -- to delete "Euclidean PI".
 -- (Did either deletes succeed? Why?)
--- <YOUR ANSWER HERE>
+-- <YOUR ANSWER HERE> 
+-- Deleting Mathmagical - Yes, it succeeded because the only link to Mathmagical was category_id and that link was severed in the previous problem first.
+-- Deleting "Euclidean Pi" - This did not succeed because the there is still a foreign key constraint. The film_id for EUCLIDEAN PI is still referenced 
+-- in the table film_actor and changing the film_category and category table relationships had no impact on the film_id.
 
---DON'T DO NUMBER 12!!
+SELECT * FROM category WHERE name = 'Mathmagical';
+SELECT * FROM film WHERE title = 'EUCLIDEAN PI';
 
+START TRANSACTION;
+
+DELETE
+FROM category 
+WHERE name = 'Mathmagical';
+
+
+DELETE
+FROM film
+WHERE title = 'EUCLIDEAN PI';
+
+COMMIT;
+ROLLBACK;
+
+
+--Per Brian - DON'T DO NUMBER 12!!
 -- 12. Check database metadata to determine all constraints of the film id, and
 -- describe any remaining adjustments needed before the film "Euclidean PI" can
 -- be removed from the film table.
+--Per Brian - DON'T DO NUMBER 12!!
