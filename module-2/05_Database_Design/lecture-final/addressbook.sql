@@ -66,3 +66,5 @@ CREATE TABLE email (
                 ( email_type <> 'Other' AND type_other_description IS NULL)  ) 
 
 );
+
+ 
