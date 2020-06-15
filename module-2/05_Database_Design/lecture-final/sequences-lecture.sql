@@ -1,3 +1,6 @@
+--CREATE DATABASE sequences;
+--DROP DATABASE sequences;
+
 -- RUN in sequences Database:  createdb -U postgres sequences
 
 -- DROP THE TABLE IF IT EXISTS
@@ -7,7 +10,7 @@ DROP TABLE IF EXISTS ourtable;
 CREATE TABLE ourtable (
         id serial primary key,
         name varchar(10)
-        );
+);
 
  SELECT * FROM ourtable;
   
@@ -26,6 +29,8 @@ ALTER SEQUENCE our_custom_sequence RESTART 1000 INCREMENT BY 2;
 -- Drop the custom Sequence
 DROP SEQUENCE our_custom_sequence;
 
+
+
 -- Insert into the table with a sequence using nextval() in a subquery
 INSERT INTO ourtable (id, name) VALUES ((SELECT nextval('ourtable_id_seq')), 'Steve');
 
@@ -36,11 +41,13 @@ INSERT INTO ourtable (id, name) VALUES (DEFAULT, 'Andrew');
  INSERT INTO ourtable (name) VALUES ('John');
 
 -- Insert into the table with a sequence with a manual value  (CHANGE XX to the next correct value)
-INSERT INTO ourtable (id, name) VALUES (XX, 'Stephanie');
+INSERT INTO ourtable (id, name) VALUES (9, 'Stephanie');
 
 -- Try to insert another value using DEFAULT or a SubQuery or by Omitting the column in the insert
 INSERT INTO ourtable (id, name) VALUES (DEFAULT, 'Rachelle');
 
+ SELECT * FROM ourtable;
+ 
 -- inserting into a table in a Transaction with a ROLLBACK
 START TRANSACTION;
 INSERT INTO ourtable (id, name) VALUES (DEFAULT, 'Carson');
