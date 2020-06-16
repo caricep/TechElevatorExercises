@@ -27,17 +27,21 @@ public class SpringJDBCExample {
 		 */
 		JdbcTemplate dvdstoreJdbcTemplate = new JdbcTemplate(dvdstoreDataSource);
 
+		
+		String category = "Comedy";
+		
 		/* The JdbcTemplate can be used to execute parameterized SQL statements */
 		String sqlFilmsByCategory = "SELECT film.title, film.release_year "
 				+ "FROM film JOIN film_category ON film.film_id = film_category.film_id "
-				+ "JOIN category ON category.category_id = film_category.category_id " + "WHERE category.name = ?";
+				+ "JOIN category ON category.category_id = film_category.category_id " 
+				+ "WHERE category.name = ?";
 
 		/*
 		 * The first parameter to the "queryForRowSet" method is a String containing a
 		 * parameterized SQL statement Any following parameters are used to replace
 		 * query placeholders (i.e. '?') in the order in which they appear
 		 */
-		String category = "Comedy";
+		
 		SqlRowSet results = dvdstoreJdbcTemplate.queryForRowSet(sqlFilmsByCategory, category);
 
 		System.out.println(category + " Films:");
