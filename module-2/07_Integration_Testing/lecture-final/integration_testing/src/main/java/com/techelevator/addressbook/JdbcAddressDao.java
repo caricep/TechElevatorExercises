@@ -65,7 +65,7 @@ public class JdbcAddressDao implements AddressDao {
 	@Override
 	public void update(Address address) {
 		
-		String sql = "UPDATE address SET street = ?, line_two = ?, city = ?, district = ?, postalcode = ?, "
+		String sql = "UPDATE address SET street = ?, line_two = ?, city = ?, district = ?, postal_code = ?, "
 					+ "address_type = ?, type_other_description = ? WHERE address_id = ?";
 		jdbcTemplate.update(sql, address.getStreet(), address.getLineTwo(), 
 				address.getCity(), address.getDistrict(), address.getPostalCode(),
