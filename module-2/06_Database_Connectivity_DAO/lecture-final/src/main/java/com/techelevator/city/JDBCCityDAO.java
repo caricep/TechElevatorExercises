@@ -1,7 +1,9 @@
 package com.techelevator.city;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.sql.DataSource;
 
@@ -78,30 +80,22 @@ public class JDBCCityDAO implements CityDAO {
 
 	@Override
 	public List<City> findCityByCountryCode(String countryCode) {
-		// Sometimes, we also need to get multiple rows back from the database.
-		// In this case, we are getting all of the cities for a specified countryCode.
 
-		// First we need to create a new List<City> to hold the cities we want to
-		// return.
 		List<City> cities = new ArrayList<>();
+		Map<Long, City> cityMap = new HashMap<Long, City>();
 
-		// Write the SQL query to get the cities that have the matching country code.
-		// Again, notice that we are using the question mark. Why is this important?
 		String sqlFindCityByCountryCode = "SELECT id, name, countrycode, district, population"
 				+ " FROM city WHERE countrycode = ?";
 
-		// Send the query to the database and store the results in a SqlRowSet object
+
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlFindCityByCountryCode, countryCode);
 
-		// Instead of simply checking "if" we got a row back, this time we could get
-		// multiple rows. Because of this, we need to loop through the rows while there
-		// are still rows left to "look at".
+
 		while (results.next()) {
-			// Create a new City object by passing the SqlRowSet we are currently on to the
-			// mapRowToCity method.
+
 			City theCity = mapRowToCity(results);
 
-			// Now, add the city we just created to the List of City objects.
+			cityMap.put( results.getLong("id"), theCity);
 			cities.add(theCity);
 		}
 		return cities;
