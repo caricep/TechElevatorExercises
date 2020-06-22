@@ -1,5 +1,7 @@
 package com.techelevator;
 
+import java.util.Scanner;
+
 import org.apache.commons.dbcp2.BasicDataSource;
 
 import com.techelevator.city.City;
@@ -38,11 +40,19 @@ public class DAOExample {
 
 		// We need to create a new city object because our dao has a method to save a
 		// City to the database. This means we need to pass a City object to the method.
+		
+		Scanner input = new Scanner(System.in);
+		System.out.println("City name: ");
+		String cityName = input.nextLine();
+		System.out.println("Population");
+		int population = input.nextInt();
+		input.nextLine();
+		
 		City smallville = new City();
 		smallville.setCountryCode("USA");
 		smallville.setDistrict("KS");
-		smallville.setName("Smallville");
-		smallville.setPopulation(42080);
+		smallville.setName(cityName);
+		smallville.setPopulation(population);
 
 		// We are calling the save method on the CityDAO object. What type of object is
 		// the dao variable?
