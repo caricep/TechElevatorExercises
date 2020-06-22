@@ -29,23 +29,56 @@ public class App {
      * should be private, but here are public to allow for academic validation.
      */
     public Auction[] listAllAuctions() {
-        // api code here
-        return null;
+        Auction[] allAuctions = restTemplate.getForObject(API_URL, Auction[].class);
+        return allAuctions;
     }
 
     public Auction listDetailsForAuction() {
-        // api code here
-        return null;
+       	int id = 0;
+       	
+    	System.out.print("Please enter an auction ID: ");
+    	
+    	try {
+    		id = Integer.parseInt(scanner.nextLine());
+        } catch (NumberFormatException e) {
+			System.out.println("Please enter a valid auction ID.");
+		}
+    	
+    	String url = API_URL + "/" + id;        	  
+    	Auction auctionDetails = restTemplate.getForObject(url, Auction.class);
+    	return auctionDetails;
     }
 
     public Auction[] findAuctionsSearchTitle() {
-        // api code here
-        return null;
+        String title = "";
+        
+        System.out.print("Please enter auction title keyword(s): ");
+        
+        try {
+    		title = scanner.nextLine();
+        } catch (Exception e) {
+			System.out.println("Please enter a valid auction title.");
+		}
+        
+    	String url = API_URL + "?title_like=" + title;
+    	Auction[] auction = restTemplate.getForObject(url, Auction[].class);
+        return auction;
     }
 
     public Auction[] findAuctionsSearchPrice() {
-        // api code here
-        return null;
+    	double price = 0.00;
+       	
+    	System.out.print("Please enter an auction price: ");
+    	
+    	try {
+    		price = Double.parseDouble(scanner.nextLine());
+        } catch (NumberFormatException e) {
+			System.out.println("Please enter a valid auction price.");
+		}
+    	
+    	String url = API_URL + "?currentBid_lte=" + price;
+    	Auction[] auction = restTemplate.getForObject(url, Auction[].class);	
+        return auction;
     }
 
     public void run() {
