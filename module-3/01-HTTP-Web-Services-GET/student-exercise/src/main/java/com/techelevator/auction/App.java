@@ -41,7 +41,7 @@ public class App {
     	try {
     		id = Integer.parseInt(scanner.nextLine());
         } catch (NumberFormatException e) {
-			System.out.println("Please enter a valid auction ID.");
+			System.out.println("Error. Please enter a valid auction ID.");
 		}
     	
     	String url = API_URL + "/" + id;        	  
@@ -57,7 +57,7 @@ public class App {
         try {
     		title = scanner.nextLine();
         } catch (Exception e) {
-			System.out.println("Please enter a valid auction title.");
+			System.out.println("Error. Please enter valid keywords.");
 		}
         
     	String url = API_URL + "?title_like=" + title;
@@ -73,7 +73,7 @@ public class App {
     	try {
     		price = Double.parseDouble(scanner.nextLine());
         } catch (NumberFormatException e) {
-			System.out.println("Please enter a valid auction price.");
+			System.out.println("Error. Please enter a valid price.");
 		}
     	
     	String url = API_URL + "?currentBid_lte=" + price;
