@@ -79,8 +79,7 @@ public class AuctionService {
     		return null;
     	} catch (ResourceAccessException e) {
     		return null;
-    	}
-        
+    	} 
         return auction;
     }
 
@@ -98,8 +97,7 @@ public class AuctionService {
     		return null;
     	} catch (ResourceAccessException e) {
     		return null;
-    	}
-        
+    	}      
         return auction;
     }
 
@@ -112,8 +110,7 @@ public class AuctionService {
     		return false;
     	} catch (ResourceAccessException e) {
     		return false;
-    	}
-    	
+    	}    	
     	return true; 
     }
 
