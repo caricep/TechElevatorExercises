@@ -28,8 +28,34 @@ public class HotelService {
    * @return Reservation
    */
   public Reservation addReservation(String newReservation) {
-    // TODO: Implement method
-    return null;
+	  // Not part of the API, just to convert the user input to a Reservation
+	  // object for this example
+    Reservation reservation = makeReservation(newReservation);
+    if (reservation == null) {
+    	return null;
+    }
+    
+    // 1) Create the HTTP Header for the request
+    HttpHeaders headers = new HttpHeaders();
+    // 2) Set the Content-Type Header to "application/json"
+    headers.setContentType(MediaType.APPLICATION_JSON);
+    // 3) Create HttpEntity Object that represents the Headers and the Body of the Request
+    //    <Reservation> tells the HttpEntity that our message body will be serialized from our Reservation object
+    //    The constructor arguments are:  ( object_to_build_message_body,  object_with_the_headers )
+    HttpEntity<Reservation> requestEntity = new HttpEntity<Reservation>(reservation, headers);
+    
+    String url = BASE_URL + "hotels/" + reservation.getHotelID() + "/reservations";
+    
+    try {
+    	// 4) use postForObject( url,  HttpEntity populated with the Header and Body Object, type to return)
+    	reservation = restTemplate.postForObject(url, requestEntity, Reservation.class);
+    } catch (RestClientResponseException e) {
+		console.printError( e.getRawStatusCode() + " : " + e.getStatusText() );
+	} catch (ResourceAccessException e) {
+		console.printError( e.getMessage() ); 
+	}
+    
+    return reservation;
   }
 
   /**
@@ -40,8 +66,29 @@ public class HotelService {
    * @return
    */
   public Reservation updateReservation(String CSV) {
-    // TODO: Implement method
-    return null;
+	  Reservation reservation = makeReservation(CSV);
+	  if (reservation == null) {
+    	return null;
+	  }
+	  
+	  // 1) Create the Header
+	  HttpHeaders headers = new HttpHeaders();
+	  // 2) Set the Content-Type header to application/json
+	  headers.setContentType(MediaType.APPLICATION_JSON);
+	  // 3) Create a request entity and pass it the data object and header
+	  HttpEntity<Reservation> requestEntity = new HttpEntity<Reservation>(reservation, headers);
+	  
+	  String url = "http://localhost:3000/reservations/" + reservation.getId();
+	  
+	  try {
+		  restTemplate.put(url, requestEntity);
+	  } catch (RestClientResponseException e) {
+		  console.printError( e.getRawStatusCode() + " : " + e.getStatusText() );
+	  } catch (ResourceAccessException e) {
+		  console.printError( e.getMessage() ); 
+	  }
+	  
+	  return reservation;
   }
 
   /**
@@ -50,7 +97,14 @@ public class HotelService {
    * @param id
    */
   public void deleteReservation(int id) {
-    // TODO: Implement method
+	  String url = BASE_URL + "reservations/" + id;
+	  try {
+		  restTemplate.delete(url);
+	  } catch (RestClientResponseException e) {
+		  console.printError( e.getRawStatusCode() + " : " + e.getStatusText() );
+	  } catch (ResourceAccessException e) {
+		  console.printError( e.getMessage() ); 
+	  }
   }
 
  
@@ -61,8 +115,15 @@ public class HotelService {
    * @return
    */
   public Hotel[] listHotels() {
-    // TODO: Implement method
-    return null;
+	Hotel[] hotels = null;
+	try {
+		hotels = restTemplate.getForObject(BASE_URL + "hotels", Hotel[].class);
+	} catch (RestClientResponseException e) {
+		console.printError( e.getRawStatusCode() + " : " + e.getStatusText() );
+	} catch (ResourceAccessException e) {
+		console.printError( e.getMessage() ); 
+	}
+    return hotels;
   }
 
   /**
@@ -72,8 +133,19 @@ public class HotelService {
    * @return Hotel
    */
   public Hotel getHotel(int id) {
-    // TODO: Implement method
-    return null;
+	Hotel hotel = null;
+	try {
+		hotel = restTemplate.getForObject(BASE_URL + "hotels/" + id, Hotel.class);
+	} catch (RestClientResponseException e) {
+		// RestClientResponseException occurs for HttpStatus's above
+		// 299, for example 401, 404, 500
+		console.printError( e.getRawStatusCode() + " : " + e.getStatusText() );
+	} catch (ResourceAccessException e) {
+		// ResourceAccessException occurs then the connection cannot be made, 
+		// for example the server is not available.
+		console.printError( e.getMessage() ); 
+	}
+    return hotel;
   }
 
   /* DON'T MODIFY ANY METHODS BELOW */
