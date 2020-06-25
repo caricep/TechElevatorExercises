@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
+@RequestMapping("/auctions")
 public class AuctionController {
 
     private AuctionDAO dao;
@@ -17,9 +18,9 @@ public class AuctionController {
         this.dao = new MemoryAuctionDAO();
     }
     
-   @RequestMapping (path = "/auctions", method = RequestMethod.GET)
-    public List<Auction> listOfAuctions(@RequestParam (defaultValue = "", required = false) String title_like, 
-    									@RequestParam (defaultValue = "0", required = false) double currentBid_lte) {
+   @RequestMapping (path = "", method = RequestMethod.GET)
+    public List<Auction> listOfAuctions(@RequestParam (defaultValue = "") String title_like, 
+    									@RequestParam (defaultValue = "0") double currentBid_lte) {
 	   if (title_like != null && currentBid_lte > 0) {
 		   return dao.searchByTitleAndPrice(title_like, currentBid_lte);
 	   }
@@ -33,12 +34,12 @@ public class AuctionController {
     }
    
    
-   @RequestMapping (path = "/auctions/{auctionId}", method = RequestMethod.GET)
+   @RequestMapping (path = "/{auctionId}", method = RequestMethod.GET)
    public Auction getAuctionById(@PathVariable int auctionId) {
 	   return dao.get(auctionId);
    }
 
-   @RequestMapping (path = "/auctions", method = RequestMethod.POST)
+   @RequestMapping (path = "", method = RequestMethod.POST)
    public Auction addAuction(@RequestBody Auction auction) {
 	   return dao.create(auction);
    }
