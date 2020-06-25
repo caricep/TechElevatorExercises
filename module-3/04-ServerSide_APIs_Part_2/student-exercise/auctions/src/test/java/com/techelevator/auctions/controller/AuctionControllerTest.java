@@ -26,6 +26,7 @@ import com.techelevator.auctions.model.Auction;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(AuctionController.class)
+@ContextConfiguration(classes = {MemoryAuctionDAO.class})
 public class AuctionControllerTest {
 
     @Autowired
