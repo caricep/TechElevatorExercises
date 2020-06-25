@@ -15,6 +15,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.http.MediaType;
+import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -26,6 +27,7 @@ import com.techelevator.auctions.model.Auction;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(AuctionController.class)
+@ContextConfiguration(classes = {MemoryAuctionDAO.class, AuctionController.class})
 public class AuctionControllerTest {
 
     @Autowired
