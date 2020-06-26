@@ -18,8 +18,8 @@ public class JDBCVenueDAO implements VenueDAO {
 
 	private JdbcTemplate jdbcTemplate;
 
-	public JDBCVenueDAO(DataSource dataSource) {
-		this.jdbcTemplate = new JdbcTemplate(dataSource);
+	public JDBCVenueDAO(JdbcTemplate jdbcTemplate) {
+		this.jdbcTemplate = jdbcTemplate;
 	}
 	
 	

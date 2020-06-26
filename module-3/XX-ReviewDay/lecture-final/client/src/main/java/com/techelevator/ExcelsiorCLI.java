@@ -17,6 +17,8 @@ import com.techelevator.excelsior.model.VenueDAO;
 import com.techelevator.excelsior.model.JDBC.JDBCReservationDAO;
 import com.techelevator.excelsior.model.JDBC.JDBCSpaceDao;
 import com.techelevator.excelsior.model.JDBC.JDBCVenueDAO;
+import com.techelevator.excelsior.model.api.ApiReservationDao;
+import com.techelevator.excelsior.model.api.ApiVenueDao;
 import com.techelevator.view.Menu;
 
 import java.sql.Date;
@@ -55,6 +57,9 @@ public class ExcelsiorCLI {
 	private Menu menu;
 	private boolean noReservation;
 	
+	private String baseUrl = "http://localhost:8080";
+	
+	
 	public static void main(String[] args) {
 		BasicDataSource dataSource = new BasicDataSource();
 		dataSource.setUrl("jdbc:postgresql://localhost:5432/excelsior-venues");
@@ -67,8 +72,10 @@ public class ExcelsiorCLI {
 
 	public ExcelsiorCLI(DataSource datasource) {
 		spaceDAO = new JDBCSpaceDao(datasource);
-		venueDAO = new JDBCVenueDAO(datasource);
-		reservationDAO = new JDBCReservationDAO(datasource);
+		//venueDAO = new JDBCVenueDAO(datasource);
+		venueDAO = new ApiVenueDao(baseUrl);
+		//reservationDAO = new JDBCReservationDAO(datasource);
+		reservationDAO = new ApiReservationDao(baseUrl);
 		menu = new Menu(System.in, System.out);
 	}
 
