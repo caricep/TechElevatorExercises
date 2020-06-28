@@ -18,8 +18,8 @@ public class JDBCSpaceDao implements SpaceDAO {
 
 	private JdbcTemplate jdbcTemplate;
 
-	public JDBCSpaceDao(DataSource dataSource) {
-		this.jdbcTemplate = new JdbcTemplate(dataSource);
+	public JDBCSpaceDao(JdbcTemplate jdbcTemplate) {
+		this.jdbcTemplate = jdbcTemplate;
 	}
 
 	@Override
