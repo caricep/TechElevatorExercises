@@ -13,12 +13,13 @@ import org.springframework.stereotype.Component;
 import com.techelevator.excelsior.model.Reservation;
 import com.techelevator.excelsior.model.dao.ReservationDAO;
 
+@Component
 public class JDBCReservationDAO implements ReservationDAO {
 
 	private JdbcTemplate jdbcTemplate;
 
-	public JDBCReservationDAO(DataSource dataSource) {
-		this.jdbcTemplate = new JdbcTemplate(dataSource);
+	public JDBCReservationDAO(JdbcTemplate jdbcTemplate) {
+		this.jdbcTemplate = jdbcTemplate;
 	}
 
 	@Override
