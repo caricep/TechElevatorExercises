@@ -34,9 +34,31 @@ public class HotelService {
     if (reservation == null) {
       throw new HotelServiceException(INVALID_RESERVATION_MSG);
     }
-
-    // TODO: Fix Me
-    throw new HotelServiceException("NOT IMPLEMENTED");
+    
+    // 1. Create an HttpEntity with an Authorization Header
+    HttpHeaders headers = new HttpHeaders();
+    headers.setContentType(MediaType.APPLICATION_JSON);
+    // user setBearerAuth with the JWT
+    headers.setBearerAuth( AUTH_TOKEN );
+    HttpEntity<Reservation> requestEntity = new HttpEntity<Reservation>(reservation, headers);
+    
+    // 2. Build the URL
+    String url = BASE_URL + "hotels/" + reservation.getHotelID()  + "/reservations";
+    
+    // Make the POST request
+    
+    try {
+	    //reservation = restTemplate.postForObject(url,  requestEntity, Reservation.class);
+	    // OR
+	    reservation = restTemplate.exchange(url, HttpMethod.POST, requestEntity, Reservation.class).getBody();
+    
+    // Always catch RestClientResponseException so can deal with 403 and 401 authorization/authentication errors
+    } catch (RestClientResponseException ex) {
+    	throw new HotelServiceException( ex.getRawStatusCode() + " : " + ex.getResponseBodyAsString() );
+    }
+    
+    return reservation;
+    
   }
 
   /**
@@ -99,8 +121,13 @@ public class HotelService {
    */
   public Hotel getHotel(int id) throws HotelServiceException {
     Hotel hotel = null;
+    
+    HttpHeaders headers = new HttpHeaders();
+    headers.setBearerAuth(AUTH_TOKEN);
+    HttpEntity entity = new HttpEntity<>(headers);
+    
     try {
-      hotel = restTemplate.exchange(BASE_URL + "hotels/" + id, HttpMethod.GET, makeAuthEntity(), Hotel.class).getBody();
+      hotel = restTemplate.exchange(BASE_URL + "hotels/" + id, HttpMethod.GET, entity, Hotel.class).getBody();
     } catch (RestClientResponseException ex) {
       throw new HotelServiceException(ex.getRawStatusCode() + " : " + ex.getResponseBodyAsString());
     }
@@ -113,7 +140,7 @@ public class HotelService {
    * @return Reservation[]
    */
   public Reservation[] listReservations() throws HotelServiceException {
-    Reservation[] reservations = null;
+     Reservation[] reservations = null;
     try {
       reservations = restTemplate
           .exchange(BASE_URL + "reservations", HttpMethod.GET, makeAuthEntity(), Reservation[].class).getBody();
