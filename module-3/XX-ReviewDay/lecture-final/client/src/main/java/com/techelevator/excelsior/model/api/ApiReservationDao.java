@@ -37,8 +37,9 @@ public class ApiReservationDao implements ReservationDAO{
 		
 		
 		String url = baseUrl + "/spaces/" + spaceId + "/reservations";
-		newReservation = restTemplate.postForObject(url, request, Reservation.class);
 		
+		newReservation = restTemplate.postForObject(url, request, Reservation.class);
+	
 		return newReservation.getResId();
 	}
 
