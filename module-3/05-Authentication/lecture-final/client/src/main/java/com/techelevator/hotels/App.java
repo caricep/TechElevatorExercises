@@ -3,6 +3,8 @@ package com.techelevator.hotels;
 import com.techelevator.hotels.models.Hotel;
 import com.techelevator.hotels.models.Reservation;
 import com.techelevator.hotels.services.*;
+
+import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.ResourceAccessException;
 
@@ -61,7 +63,17 @@ public class App {
                         ResponseEntity<Map> response = authenticationService.login(credentials);
                         if (response.hasBody()) {
                             String token = (String) response.getBody().get("token");
-                            hotelService.AUTH_TOKEN = token;
+                            
+                            //ResponseEntity<Map> response = restTemplate.exchange(BASE_URL + "/login", HttpMethod.POST, entity, Map.class);
+                            //Map responseMap = response.getBody();
+                            //String token = responseMap.get("token");
+                            
+                            
+                            
+                            
+                            
+                            HotelService.setAUTH_TOKEN(token);
+                            
                             System.out.println("Login Successful");
                         }
                     } else {

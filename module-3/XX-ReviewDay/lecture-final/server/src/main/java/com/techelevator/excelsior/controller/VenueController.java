@@ -34,7 +34,6 @@ public class VenueController {
 		this.venueDao = venueDao;
 	}
 	
-
 	@RequestMapping(path="/venues", method=RequestMethod.GET)
 	public List<Venue> list(@RequestParam(required=false) String name) {
 		if (name != null) {

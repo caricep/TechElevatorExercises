@@ -13,7 +13,7 @@ import java.util.Random;
 
 public class HotelService {
 
-  public static String AUTH_TOKEN = "";
+  private static String AUTH_TOKEN = "";
   private final String INVALID_RESERVATION_MSG = "Invalid Reservation. Please enter the Hotel Id, Full Name, Checkin Date, Checkout Date and Guests";
   private final String BASE_URL;
   private final RestTemplate restTemplate = new RestTemplate();
@@ -240,5 +240,16 @@ public class HotelService {
     HttpEntity entity = new HttpEntity<>(headers);
     return entity;
   }
+
+public static String getAUTH_TOKEN() {
+	return AUTH_TOKEN;
+}
+
+public static void setAUTH_TOKEN(String aUTH_TOKEN) {
+	AUTH_TOKEN = aUTH_TOKEN;
+}
+  
+  
+  
 
 }
