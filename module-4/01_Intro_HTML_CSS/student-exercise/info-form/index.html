@@ -4,9 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Info Form</title>
 </head>
 <body>
-    
+    <header>
+        <h1>Join Our Fanclub!</h1>
+        <p>Please complete the form below to subscribe to fan club updates.</p>
+    </header>
+
+    <main>
+        <h2>Fanclub Form</h2>
+        <form action="/api/fanclub" method="POST">
+
+          <div>
+              <label for="memberName">Name:</label>
+              <input id="memberName" name="memberName" type="text" />
+          </div>
+        
+          <div>
+                <label for="memberEmailAddress">Email Address:</label>
+                <input id="memberEmailAddress" name="memberEmailAddress" type="text" />
+          </div>
+
+          <div>
+                <label for="dateOfBirth">Date of Birth:</label>
+                <input id="dateOfBirth" name="dateOfBirth" type="date" />
+          </div>
+
+          <div>
+                <label for="favoriteColor">Favorite Color:</label>
+                <input id="favoriteColor" name="favoriteColor" type="color" />
+          </div>
+
+          <div>
+                <label for="favoriteNumber">Favorite Number:</label>
+                <input id="favoriteNumber" name="favoriteNumber" type="number" />
+          </div>
+
+          <div>
+                <label for="confirmCorrectDataCheckbox">Confirm Data is Correct:</label>
+                <input id="confirmCorrectDataCheckbox" name="confirmCorrectDataCheckbox" type="checkbox" />
+          </div>
+
+          <div>
+              <input type="submit" value="Submit" />
+          </div>
+
+        </form>
+    </main>
 </body>
 </html>
