@@ -5,16 +5,22 @@ div {
 * {
     background-color: green;
 }
-.descendentOne {
-    background-color: yellow;
-}
+
 #idExample {
     background-color: gray;
 }
-
+#idExample {
+    background-color: purple;
+}
 .descendentOne {
     background-color: orange;
 }
+.descendentOne {
+    background-color: yellow;
+}
+
+
+
 
 div {
     border-style: solid;
@@ -27,5 +33,18 @@ span {
     margin: 10px;
     padding: 10px;
 }
+
+div:hover {
+    background-color: blue;
+}
+
+#siblingtest {
+    background-color: purple;
+}
+
+.spanOne + span {
+    background-color: blue;
+}
+
 
 
