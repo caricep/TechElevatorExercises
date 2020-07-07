@@ -11,6 +11,7 @@
     <header>
         <h1>Join Our Fanclub!</h1>
         <p>Please complete the form below to subscribe to fan club updates.</p>
+        <p>* notes a required field.</p>
     </header>
 
     <main>
@@ -18,13 +19,13 @@
         <form action="/api/fanclub" method="POST">
 
           <div>
-              <label for="memberName">Name:</label>
-              <input id="memberName" name="memberName" type="text" />
+              <label for="memberName">Name*:</label>
+              <input id="memberName" name="memberName" type="text" required />
           </div>
         
           <div>
-                <label for="memberEmailAddress">Email Address:</label>
-                <input id="memberEmailAddress" name="memberEmailAddress" type="text" />
+                <label for="memberEmailAddress">Email Address*:</label>
+                <input id="memberEmailAddress" name="memberEmailAddress" type="text" required />
           </div>
 
           <div>
