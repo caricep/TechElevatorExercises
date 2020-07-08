@@ -113,3 +113,30 @@ h1#headline {
 #experience-design {
     grid-area: fourth-experience;
 }
+
+@media only screen and (max-width: 1024px) {
+    #main-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-row-gap: 20px;
+        grid-column-gap: 35px;
+        grid-template-areas:
+        "headline headline"
+        "quote picture"
+        "quote contact"
+        "profile profile"
+        "experience experience";
+        align-items: center;
+    }
+
+    #experience-grid {
+        grid-area: experience;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-row-gap: 20px;
+        grid-column-gap: 20px;
+        grid-template-areas:
+        "first-experience third-experience"
+        "second-experience fourth-experience";
+    }
+}
