@@ -7,8 +7,39 @@ section#flex-example {
     width: 75%;
     background-color: gray;
     margin: auto;
+
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
+
+div#one {
+    background-color: red;
+    /* flex-shrink: 1; */
+    /* flex-grow: 2;
+    flex-basis: 200px; */
+    /* height: 75px;
+    line-height: 50px; */
+    align-self: flex-start;
+}
+
+div#two {
+    background-color: green;
+    /* flex-basis: 200px;
+    flex-grow: 1; */
+    /* flex-shrink: .6; */
+    /* height: 150px;
+    line-height: 150px; */
+}
+
+div#three {
+    background-color: blue;
+    /* flex-basis: 90px; */
+    align-self: flex-end;
+}
 
 
 
@@ -22,22 +53,7 @@ section#flex-example {
     line-height: 100px;
 }
 
-div#one {
-    background-color: red;
-    /* height: 75px;
-    line-height: 50px; */
-}
 
-div#two {
-    background-color: green;
-    /* height: 150px;
-    line-height: 150px; */
-}
-
-div#three {
-    background-color: blue;
-
-}
 
 
 #flex-description {
